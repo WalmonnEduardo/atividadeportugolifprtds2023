@@ -1,0 +1,90 @@
+programa
+{
+	inclua biblioteca Matematica
+	
+inteiro util// variável ultilizada para tudo que tem de variáveis inteiras para não criar 1 milhão de variáveis.
+	real l1
+	real l2
+	cadeia planeta
+	real mb
+	real mbps
+	real i = (11.5*11.5)+(6.3*6.3)
+	
+	funcao inicio()
+	{
+	
+		escreva("Em um ano tem ",24*365," horas. Mas um ano bissexto tem ",24*366," horas.\n")// 1)a)
+		escreva("Em uma década tem ",60*24*3650," minutos\n")//não considerei ano bissexto espero não ter problema 1)b)
+		escreva("Qual é sua idade em anos: ")
+		leia(util)
+		escreva("Você tem ",60*60*24*365*util," segundos de idade\n")//1)c)
+		escreva("Um gogolplex\n")//1)d)
+		escreva("Você tem ",977000000/60/60/24/365," anos\n")//1)e)
+
+		escreva("Você tem ",(977000000/60/60/24/365)*0.2408467," anos em mercúrio\n")//2)a)
+		escreva("Escreva sua idade em ano: ")
+		leia(util)
+		escreva("Em que planeta você quer ver sua idade?Escreva seu planeta com letra minúscula. \n")
+		leia(planeta)
+		se(planeta == "mercúrio")
+		{
+			escreva("Sua idade em Mercúrio é ",util/0.2408467," anos\n")
+		}
+		
+senao se(planeta == "vênus")
+		{
+			escreva("Sua idade em Vênus é ",util/0.61519726," anos\n")
+		}
+		
+		senao se(planeta == "marte")
+		{
+			escreva("Sua idade em Marte é ",util/1.8808158," anos\n")
+		}
+		
+		senao se(planeta == "júpiter")
+		{
+			escreva("Sua idade em Júpiter é ",util/11.862615," anos\n")
+		}
+		
+		senao se(planeta == "urano")
+		{
+			escreva("Sua idade em Urano é ",util/84.016846," anos\n")
+		}
+		
+		senao
+		{
+			escreva("Sua idade em Netuno é ",util/164.79132," anos\n")
+		}//2)b)
+
+		escreva("Ele deve dedicar",100/6," minutos para cada disciplina e descansar ",100%6," minutos\n")//3)
+
+		escreva("Qual o tamanho da tábua? ")
+		leia(util)
+		escreva("Com ",util," metros de tábua dá ",(util*100)/45," tábuas de 45 cm e sobra ",(util*100)%45,"cm\n")//4)
+
+		real radicando =Matematica.raiz(i,2)
+		escreva("Ele precisará de ",radicando," metros de fio\n")
+		escreva("Me informe o valor de um lado do muro: ")
+		leia(l1)
+		escreva("Me informe o valor de outro lado do muro: ")
+		leia(l2)
+		escreva("Ele precisará de ",(l1*l1)+(l2*l2)," metros de fio\n")//então eu entendi a quantidade fios como metros de fios essa é a 5)b)
+		i = (l1*l1)+gu2*l2)
+		radicando =Matematica.raiz(i,2)
+		escreva("Ele terá se dedicado ",5*6*(365/7)+(365%7)/24," horas a leitura")//6)
+
+		escreva("Qual é sua idade em anos? ")
+		leia(util)
+		escreva("A soma de todas as idades que você já teve é ",util*(util+1)/2,"\n")//7)
+
+		escreva("Qual é o tamanho do arquivo em MB? ")
+		leia(mb)
+		escreva("Qual é a velocidade do site em MBPS para fazer o download? ")
+		leia(mbps)
+		escreva("Irá demorar ",mb/mbps," segundos\n")//8)
+
+		escreva("Qual é o tamanho em metros quadrados da área a ser pintada? ")
+		leia(util)
+		escreva("Você deverá comprar ",util/54 + util%54," latas de tinta e gastará",(util/54+ util%54)*480," reais")//9)
+	}
+}

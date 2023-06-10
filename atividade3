@@ -2,13 +2,13 @@ programa
 {
 	inclua biblioteca Matematica
 	
-inteiro util// variável ultilizada para tudo que tem de variáveis inteiras para não criar 1 milhão de variáveis.
-	real l1
-	real l2
-	cadeia planeta
-	real mb
-	real mbps
-	real i = (11.5*11.5)+(6.3*6.3)
+	inteiro util// variável ultilizada para tudo que tem de variáveis inteiras para não criar 1 milhão de variáveis. Entenda professor é trabalhoso
+	real l1//Para atividade que tem que fazer raiz quadrada
+	real l2//Para atividade que tem que fazer raiz quadrada
+	cadeia planeta//Para atividade da idade em qual planeta
+	real mb//Para atividade do download
+	real mbps//Para atividade do download
+	real i = (11.5*11.5)+(6.3*6.3)//Para atividade que tem que fazer raiz quadrada
 	
 	funcao inicio()
 	{
@@ -31,7 +31,7 @@ inteiro util// variável ultilizada para tudo que tem de variáveis inteiras par
 			escreva("Sua idade em Mercúrio é ",util/0.2408467," anos\n")
 		}
 		
-senao se(planeta == "vênus")
+		senao se(planeta == "vênus")
 		{
 			escreva("Sua idade em Vênus é ",util/0.61519726," anos\n")
 		}
@@ -56,7 +56,7 @@ senao se(planeta == "vênus")
 			escreva("Sua idade em Netuno é ",util/164.79132," anos\n")
 		}//2)b)
 
-		escreva("Ele deve dedicar",100/6," minutos para cada disciplina e descansar ",100%6," minutos\n")//3)
+		escreva("Ele deve dedicar ",100/6," minutos para cada disciplina e descansar ",100%6," minutos\n")//3)
 
 		escreva("Qual o tamanho da tábua? ")
 		leia(util)
@@ -68,10 +68,10 @@ senao se(planeta == "vênus")
 		leia(l1)
 		escreva("Me informe o valor de outro lado do muro: ")
 		leia(l2)
-		escreva("Ele precisará de ",(l1*l1)+(l2*l2)," metros de fio\n")//então eu entendi a quantidade fios como metros de fios essa é a 5)b)
-		i = (l1*l1)+gu2*l2)
+		i = (l1*l1)+(l2*l2)
 		radicando =Matematica.raiz(i,2)
-		escreva("Ele terá se dedicado ",5*6*(365/7)+(365%7)/24," horas a leitura")//6)
+		escreva("Ele precisará de ",radicando," metros de fio\n")//então eu entendi a quantidade fios como metros de fios essa é a 5)b)
+		escreva("Ele terá se dedicado ",5*6*(365/7)+(365%7)/24," horas a leitura\n")//6)
 
 		escreva("Qual é sua idade em anos? ")
 		leia(util)
@@ -85,6 +85,13 @@ senao se(planeta == "vênus")
 
 		escreva("Qual é o tamanho em metros quadrados da área a ser pintada? ")
 		leia(util)
-		escreva("Você deverá comprar ",util/54 + util%54," latas de tinta e gastará",(util/54+ util%54)*480," reais")//9)
+		se(util%54 == 0)
+		{
+			escreva("Você deverá comprar ",util/54," latas de tinta e gastará",util/54*480," reais")
+		}
+		senao
+		{
+			escreva("Você deverá comprar ",util/54 + 1," latas de tinta e gastará",(util/54+1)*480," reais")//9)
+		}
 	}
 }

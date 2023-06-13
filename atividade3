@@ -21,7 +21,7 @@ programa
 		escreva("Um gogolplex\n")//1)d)
 		escreva("Você tem ",977000000/60/60/24/365," anos\n")//1)e)
 
-		escreva("Você tem ",(977000000/60/60/24/365)*0.2408467," anos em mercúrio\n")//2)a)
+		escreva("Você tem ",(977000000/60/60/24/365)/0.2408467," anos em mercúrio\n")//2)a)
 		escreva("Escreva sua idade em ano: ")
 		leia(util)
 		escreva("Em que planeta você quer ver sua idade?Escreva seu planeta com letra minúscula. \n")

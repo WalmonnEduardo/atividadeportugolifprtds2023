@@ -1,0 +1,131 @@
+programa
+{
+	
+inteiro a = 1
+	inteiro b = 20
+	inteiro c = 20
+	inteiro d = 1
+	inteiro f
+	inteiro g = 1
+	cadeia senha
+	funcao inicio()
+	{
+		//Questão 1)
+		enquanto(a <= 20)
+		{
+			escreva(a,"\n")
+			a++
+		}
+
+		//Questão 2)
+		enquanto(b >= 1)
+		{
+			escreva(b,"\n")
+			b--
+		}
+
+		//Questão 3)
+		enquanto(c >= 1)
+		{
+			escreva(c,"-")
+			c --
+		}
+		escreva("\n")
+
+		//Questão 4)
+		enquanto(d <= 50)
+		{
+			escreva(d,"-")
+			d += 2
+		}
+
+		//Questaão 5)
+		escreva("\nMe informe um número: ")
+		leia(f)
+		se(f >= 1)
+		{
+			enquanto(g <= f)
+			{
+				escreva(g,"-")
+				g++
+			}
+			escreva("\n\n\n")
+			enquanto(g >= 1)
+			{
+				escreva(g,"-")
+				g--
+			}
+		}
+		senao se(f <= 0)
+		{
+			enquanto(g >= f)
+			{
+				escreva(g,"-")
+				g--
+			}
+			escreva("\n\n\n")
+			enquanto(g < 1)
+			{
+				escreva(g,"-")
+				g++
+			}
+		}
+
+		//Questão 6)
+		escreva("\n")
+		escreva("Me informe um número: ")
+		leia(f)
+		escreva("\n")
+		escreva("Me informe outro número : ")
+		leia(g)
+		se(f <= g)
+		{
+			f++
+			enquanto(f!=g)
+			{
+				escreva(f,"-")
+				f++
+			}
+		}
+		senao
+		{
+			f--
+			enquanto(f!=g)
+			{
+				escreva(f,"-")
+				f--
+			}
+		}
+
+		//Questão 7)
+		faca
+		{
+			escreva("\n")
+			escreva("Crie uma senha: ")
+			leia(senha)
+			se(senha =="12345"ou senha =="senha"ou senha =="Senha"ou senha =="123456"ou  senha =="12345678"ou senha =="123456789")
+			{
+				escreva("Senha insegura")
+				limpa()
+			}
+			senao
+			{
+				escreva("Senha segura")
+				limpa()
+			}
+		}enquanto(senha =="12345"ou senha =="senha"ou senha =="Senha"ou senha =="123456"ou  senha =="12345678"ou senha =="123456789")
+				
+		limpa()
+
+
+		//Questão 8)
+		escreva("Me informe um número: ")
+		leia(a)
+		b = 1
+		enquanto(b != 11)
+		{
+			escreva(a,"x",b,"=",a*b,"   ")
+			b++
+		}
+	}
+}

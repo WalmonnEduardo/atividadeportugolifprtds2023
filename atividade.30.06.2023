@@ -1,0 +1,350 @@
+programa
+{
+	inclua biblioteca Matematica
+	inclua biblioteca Util
+	//Se a váriável tiver QN para N sendo umnúmero inteiro é Questão número N
+	inteiro Q1
+	inteiro Q2[5]
+	inteiro Q3[6]
+	inteiro Q4[2]
+	logico Q5[7]
+	inteiro Q6[2]
+	real Q7
+	cadeia Q8e[5]
+	inteiro Q8 = 0
+	inteiro Q9[3]
+	cadeia Q10
+	inteiro Q11[3]
+	inteiro Q12 = 0
+	logico Q12e = verdadeiro
+	inteiro Q13
+	real Q14[2]
+	inteiro Q15
+	real Q15r[2] 
+	funcao inicio()
+	{
+		//Inicio Q1
+		escreva("Qual é o temanho da área que vai ser pintada? ")
+		leia(Q1)
+
+		se(Q1 <= 18)
+		{
+			escreva("Você precisa de ",1," latas de tintas para pintar ",Q1," metros quadrados e você vai gastar ",480," reais." )
+		}
+		senao
+		{
+			escreva("Você precisa de ",(Q1/18)+(Q1%18)," para pintar ",Q1," metros quadrados e você vai gastar ",480*((Q1/18)+(Q1%18))," reais")
+		}
+		//Fim Q1
+		apaga()
+		//Inicio Q2
+		escreva("Bora resolver uma formula de Bháskara!\n")
+		escreva("Me informe o valor A: ")
+		leia(Q2[0])
+		escreva("Me informe o valor B: ")
+		leia(Q2[1])
+		escreva("Me informe o valor C: ")
+		leia(Q2[2])
+		Q2[3] = Matematica.raiz(((Q2[1]*Q2[1])-4*Q2[0]*Q2[2]), 2)
+		
+		escreva("O valor de A é ",Q2[0],"\n")
+		escreva("O valor de B é ",Q2[1],"\n")
+		escreva("O valor de C é ",Q2[2],"\n")
+		escreva("O delta é ",(Q2[1]*Q2[1])-4*Q2[0]*Q2[2],"\n")
+		escreva("X1 é ",((-Q2[1]+Q2[3])/2*Q2[0]),"\n")
+		escreva("X2 é ",((-Q2[1]-Q2[3])/2*Q2[0]),"\n")
+		//Fim Q2
+		apaga()
+		//Inicio Q3
+		escreva("Me informe sua idade em anos: ")
+		leia(Q3[0])
+		escreva("Me informe sua idade em mêses: ")
+		leia(Q3[1])
+		escreva("Me informe sua idade em dias: ")
+		leia(Q3[2])
+		escreva("Me informe sua idade em horas: ")
+		leia(Q3[3])
+		escreva("Me informe sua idade em minutos: ")
+		leia(Q3[4])
+		escreva("Me informe sua idade em segundos: ")
+		leia(Q3[5])
+		escreva("Sua idade em segundos é ",(Q3[0]*365*24*60*60)+(Q3[1]*30*24*60*60)+(Q3[2]*24*60*60)+(Q3[3]*60*60)+(Q3[4]*60)+Q3[5]," segundos de vida")
+		//Fim Q3
+		apaga()
+		//Inicio Q4
+		escreva("Você está com o carro a quantos dias? ")
+		leia(Q4[0])
+		escreva("Quantos km o carro percorreu? ")
+		leia(Q4[1])
+		escreva(" Você irá gastar ",(60*Q4[0])+(0.15*Q4[1])," reais")
+		//Fim Q4
+		apaga()
+		//Inicio Q5
+		Q5[0] = 2 * 4 == 24/3
+		Q5[1] = (15 % 4) < (19 % 6)
+		Q5[2] = nao(2 < 5) != (8 == 8)
+		Q5[3] = verdadeiro ou falso
+		Q5[4] = 2*2 == Matematica.potencia(2, 2)
+		Q5[5] = verdadeiro e ( (7 / 2) > 3.5 )
+		Q5[6] = (Matematica.arredondar( 2.8, 0 ) == 3) e (Matematica.raiz(9,2) ==3)
+		//Fim Q5
+		apaga()
+		//Inicio Q6
+		escreva("Me informe um número :")
+		leia(Q6[0])
+		escreva("Me informe um número :")
+		leia(Q6[1])
+		se(Q6[0] <= Q6[1])
+		{
+			escreva(Q6[1])
+		}
+		senao
+		{
+			escreva(Q6[0])
+		}
+		//Fim Q6
+		apaga()
+		//Inicio Q7
+		escreva("Me informe a temperatura em graus célcios: ")
+		leia(Q7)
+		se(Q7 <= 0)
+		{
+			escreva("Temperatura negativa")
+		}
+		senao
+		{
+			escreva("Temperatura positiva")
+		}
+		//Fim Q7
+		apaga()
+		//Inicio Q8
+		escreva("Vamos ver se você tem algum sintoma de COVID!\nResponda com s ou n\n")
+		escreva("Você tem coriza? ")
+		leia(Q8e[0])
+		escreva("Você tem tosse? ")
+		leia(Q8e[1])
+		escreva("Você tem febre? ")
+		leia(Q8e[2])
+		escreva("Você tem dor de garganta? ")
+		leia(Q8e[3])
+		escreva("Você tem dificuldade para respirar? ")
+		leia(Q8e[4])
+		se(Q8e[0] == "s")
+		{
+			Q8 += 1
+		}
+		se(Q8e[1] == "s")
+		{
+			Q8 += 1
+		}
+		se(Q8e[2] == "s")
+		{
+			Q8 += 1
+		}
+		se(Q8e[3] == "s")
+		{
+			Q8 += 1
+		}
+		se(Q8e[4] == "s")
+		{
+			Q8 += 10
+		}
+		se(Q8 >= 10)
+		{
+			escreva("Corre para o hospital meu filho")
+		}
+		senao se(Q8 >= 1 e Q8 <= 9)
+		{
+			escreva("É bom ver um médico mas não é nada grave eu acho")
+		}
+		senao
+		{
+			escreva("Você está saudável")
+		}
+		//Fim Q8
+		apaga()
+		//Inicio Q9
+		escreva("Diga a quantidade de metros de um dos lados do triângulo: ")
+		leia(Q9[0])
+		escreva("Diga a quantidade de metros de um dos lados do triângulo: ")
+		leia(Q9[1])
+		escreva("Diga a quantidade de metros de um dos lados do triângulo: ")
+		leia(Q9[2])
+		se(Q9[0] >= (Q9[1]+Q9[2]) e Q9[1] >= (Q9[0]+Q9[2]) e Q9[2] >= (Q9[1]+Q9[0]))
+		{
+			se(Q9[0] == Q9[1]  e Q9[0] != Q9[2] ou Q9[1] == Q9[2]e Q9[1] != Q9[0] ou Q9[0] == Q9[2] e Q9[0] != Q9[1])
+			{
+				escreva("É um triângulo isósceles.")
+			}
+			senao se(Q9[0] == Q9[1] e Q9[1] == Q9[2])
+			{
+				escreva("É um triângulo equilátero.")
+			}
+			senao
+			{
+				escreva("É um triângulo escaleno")
+			}
+		}
+		senao
+		{
+			escreva("Não é triângulo")
+		}
+		//Fim Q9
+		apaga()
+		//Inicio Q10
+		escreva("Me informe uma letra e te digo se é vogal ou consoante: ")
+		leia(Q10)
+		se(Q10 == "a" ou Q10 == "e" ou Q10 == "i" ou Q10 == "o" ou Q10 == "u")
+		{
+			escreva("É vogal")
+		}
+		senao
+		{
+			escreva("É consoante")
+		}
+		//Fim Q10
+		apaga()
+		//Inicio Q11
+		escreva("Me informe um número: ")
+		leia(Q11[0])
+		escreva("Me informe um número: ")
+		leia(Q11[1])
+		escreva("Me informe um número: ")
+		leia(Q11[2])
+		se(Q11[0] >= Q11[1] e Q11[1] >= Q11[2])
+		{
+			escreva(Q11[0]," - ",Q11[1]," - ",Q11[2])
+		}
+		se(Q11[0] >= Q11[1] e Q11[0] >= Q11[2])
+		{
+			escreva(Q11[2]," - ",Q11[0]," - ",Q11[1])
+		}
+		se(Q11[1] >= Q11[0] e Q11[0] >= Q11[2])
+		{
+			escreva(Q11[1]," - ",Q11[0]," - ",Q11[2])
+		}
+		se(Q11[1] >= Q11[0] e Q11[2] >= Q11[1])
+		{
+			escreva(Q11[2]," - ",Q11[1]," - ",Q11[0])
+		}
+		se(Q11[2] >= Q11[1] e Q11[1] >= Q11[0])
+		{
+			escreva(Q11[2]," - ",Q11[1]," - ",Q11[0])
+		}
+		se(Q11[2] >= Q11[1] e Q11[0] >= Q11[2])
+		{
+			escreva(Q11[0]," - ",Q11[2]," - ",Q11[1])
+		}
+		//Fim Q11
+		apaga()
+		//Inicio Q12
+		escreva("Me informe um ano: ")
+		leia(Q12)
+		se(((Q12%04) == 0) == Q12e)
+		{
+			escreva("É bissexto")
+		}
+		senao
+		{
+			escreva("Não é bissexto")
+		}
+		//Fim Q12
+		apaga()
+		//Inicio Q13
+		escreva("Qual é a velocidade do carro? ")
+		leia(Q13)
+		se(Q13 >= 81)
+		{
+			escreva("Você foi multado em ",(Q13-80)*7," reais")
+		}
+		//Fim Q13
+		apaga()
+		//Inicio Q14
+		escreva("Me informe a nota 1: ")
+		leia(Q14[0])
+		escreva("Me informe a nota 2: ")
+		leia(Q14[1])
+		se((Q14[0]+Q14[1])/2 >= 7 e (Q14[0]+Q14[1])/2 <= 9)
+		{
+			escreva("Aprovado")
+		}
+		senao se((Q14[0]+Q14[1])/2 <= 6)
+		{
+			escreva("Reprovado")
+		}
+		se((Q14[0]+Q14[1])/2 == 10)
+		{
+			escreva("Aprovado com distinção")
+		}
+		//Fim Q14
+		apaga()
+		//Inicio Q15
+		escreva("***********************************************\n")
+		escreva("*           CANTINA  IFPR                     *\n")
+		escreva("***********************************************\n")
+		escreva("* 100 - Cachorro quente ----------- R$ 5.00   *\n")
+		escreva("* 101 - Bauru --------------------- R$ 2.60   *\n")
+		escreva("* 102 - Bauru c/ovo --------------- R$ 3.80   *\n")
+		escreva("* 103 - Hamburger ----------------- R$ 9.00   *\n")
+		escreva("* 104 - Cheeseburger -------------- R$ 11.00  *\n")
+		escreva("* 105 - Refrigerante -------------- R$ 3.00   *\n")
+		escreva("* 106 - Semente dos Deuses -------- R$ 1000.00*\n")
+		escreva("***********************************************\n\n")
+
+		Q15r[0] = 0
+		
+		faca
+		{
+			escreva("O que deseja? ")
+			leia(Q15)
+			
+			
+		
+			escolha(Q15)
+			{
+				caso 100:escreva("Quantas unidades de Cachorro quente? ")
+				leia(Q15r[1])
+				
+				Q15r[0] += Q15r[1]*5.00
+				
+				caso 101:escreva("Quantas unidades de Bauru? ")
+				leia(Q15r[1])
+				
+				Q15r[0] += Q15r[1]*2.60
+				
+				caso 102:escreva("Quantas unidades de Bauru c/ovo? ")
+				leia(Q15r[1])
+				
+				Q15r[0] += Q15r[1]*3.80
+				
+				caso 103:escreva("Quantas unidades de Hamburger? ")
+				leia(Q15r[1])
+				
+				Q15r[0] += Q15r[1]*9.00
+				
+				caso 104:escreva("Quantas unidades de Cheeseburger? ")
+				leia(Q15r[1])
+				
+				Q15r[0] += Q15r[1]*11.00
+				
+				caso 105:escreva("Quantas unidades de Refrigerante? ")
+				leia(Q15r[1])
+				
+				Q15r[0] += Q15r[1]*3.00 
+				
+				caso 106:escreva("Quantas unidades de Semente dos Deuses? ")
+				leia(Q15r[1])
+				
+				Q15r[0] += Q15r[1]*1000.00
+				
+				caso contrario:escreva("O total é ",Q15r[0]," reais")
+				pare
+			}
+		}enquanto(verdadeiro ==  verdadeiro)
+	}
+		funcao apaga()//Para quando uma questão terminar e passar para a próxima para não encher a tela de informações desnecessárias
+		{
+			Util.aguarde(10000)
+			limpa()
+		}
+}

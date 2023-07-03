@@ -21,6 +21,7 @@ programa
 	real Q14[2]
 	inteiro Q15
 	real Q15r[2] 
+	logico Q15V = verdadeiro
 	funcao inicio()
 	{
 		//Inicio Q1
@@ -170,7 +171,7 @@ programa
 		leia(Q9[1])
 		escreva("Diga a quantidade de metros de um dos lados do triângulo: ")
 		leia(Q9[2])
-		se(Q9[0] >= (Q9[1]+Q9[2]) e Q9[1] >= (Q9[0]+Q9[2]) e Q9[2] >= (Q9[1]+Q9[0]))
+		se(Q9[0] <= (Q9[1]+Q9[2]) e Q9[1] <= (Q9[0]+Q9[2]) e Q9[2] <= (Q9[1]+Q9[0]))
 		{
 			se(Q9[0] == Q9[1]  e Q9[0] != Q9[2] ou Q9[1] == Q9[2]e Q9[1] != Q9[0] ou Q9[0] == Q9[2] e Q9[0] != Q9[1])
 			{
@@ -279,6 +280,10 @@ programa
 		//Fim Q14
 		apaga()
 		//Inicio Q15
+	Q15r[0] = 0
+	faca
+	{
+		limpa()
 		escreva("***********************************************\n")
 		escreva("*           CANTINA  IFPR                     *\n")
 		escreva("***********************************************\n")
@@ -291,10 +296,9 @@ programa
 		escreva("* 106 - Semente dos Deuses -------- R$ 1000.00*\n")
 		escreva("***********************************************\n\n")
 
-		Q15r[0] = 0
 		
-		faca
-		{
+		
+		
 			escreva("O que deseja? ")
 			leia(Q15)
 			
@@ -306,41 +310,43 @@ programa
 				leia(Q15r[1])
 				
 				Q15r[0] += Q15r[1]*5.00
-				
+				pare
 				caso 101:escreva("Quantas unidades de Bauru? ")
 				leia(Q15r[1])
 				
 				Q15r[0] += Q15r[1]*2.60
-				
+				pare
 				caso 102:escreva("Quantas unidades de Bauru c/ovo? ")
 				leia(Q15r[1])
 				
 				Q15r[0] += Q15r[1]*3.80
-				
+				pare
 				caso 103:escreva("Quantas unidades de Hamburger? ")
 				leia(Q15r[1])
 				
 				Q15r[0] += Q15r[1]*9.00
-				
+				pare
 				caso 104:escreva("Quantas unidades de Cheeseburger? ")
 				leia(Q15r[1])
 				
 				Q15r[0] += Q15r[1]*11.00
-				
+				pare
 				caso 105:escreva("Quantas unidades de Refrigerante? ")
 				leia(Q15r[1])
 				
 				Q15r[0] += Q15r[1]*3.00 
-				
+				pare
 				caso 106:escreva("Quantas unidades de Semente dos Deuses? ")
 				leia(Q15r[1])
 				
 				Q15r[0] += Q15r[1]*1000.00
-				
+				pare
 				caso contrario:escreva("O total é ",Q15r[0]," reais")
+				Q15V = falso
 				pare
 			}
-		}enquanto(verdadeiro ==  verdadeiro)
+		}enquanto(Q15V ==  verdadeiro)
+		//Fim Q15
 	}
 		funcao apaga()//Para quando uma questão terminar e passar para a próxima para não encher a tela de informações desnecessárias
 		{

@@ -1,0 +1,56 @@
+programa 
+{
+  inclua biblioteca Util --> u
+  /* Variável da Q1*/inteiro paisa = 80000
+  /* Variável da Q1*/inteiro paisb = 200000
+  /* Variável da Q4*/inteiro base
+  /* Variável da Q4*/inteiro expoente
+  /* Variável da Q4*/inteiro base2
+  /* Variável da Q6*/inteiro nan = 0
+  /* Variável da Q6*/inteiro nat = 1
+  /* Variável da Q6*/inteiro f
+  /* Variável da Q6*/inteiro vezes
+  funcao inicio() 
+  {
+    /*Início Q1*/
+    para(inteiro anos = 1 ; paisa < paisb ; anos++)
+    {
+      paisa *= 0.3
+      paisb *= 0.15
+    }
+    escreva(anos)
+    /*Fim Q1*/
+    proximaQ(5000)
+    /*Início Q4*/
+    escreva("Informe a base: ")
+    leia(base)
+    escreva("Informe o expoente: ")
+    leia(expoente)
+    base2=base
+    para(inteiro i = 1 ; i < expoente ; i++)
+    {
+      base *= base2
+    }
+    escreva(base)
+     /*Fim Q4*/
+    proximaQ(5000)
+    /*Início Q6*/
+    escreva("Digite qual é a quantidades de digitos que você quer: ")
+    leia(vezes)
+    para(inteiro j = 0 ; j < vezes; j++)
+    {
+      escreva(nan,",")
+      f=nan
+      nan = nat
+      nat += f
+    }
+    /*Fim Q6*/
+
+
+  }
+  funcao proximaQ(inteiro tempo)
+  {
+    u.aguarde(tempo)
+    limpa()
+  }
+}

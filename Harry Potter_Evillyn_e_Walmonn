@@ -145,14 +145,11 @@ programa
 		escolha(opcao[0])
 		{
 			caso 1:
-			escreva_devagar("O professor Sina passa entregando um pergaminho.\n")
-			escreva_devagar("[PROFESSOR SINA] Wiggenweld foi um estudioso do século XIX que queria saber curar uma pessoa sem medicina trouxa, e sem varinha\n")
-			escreva_devagar("Siga a receita a baixo e vão conseguir fazer a poção com sucesso.\n\n")
+			escreva_devagar("O professor Sina passa entregando um pergaminho.[PROFESSOR SINA] Wiggenweld foi um estudioso do século XIX que queria saber curar uma pessoa sem medicina trouxa, e sem varinha\nSiga a receita a baixo e vão conseguir fazer a poção com sucesso.\n\n")
 			pocao_cura()
               	u.aguarde(10000)
                pocao = +1
-			escreva_devagar("[NARRADOR]A aula acaba e você vai para a sala comunal e encontra Tony lá")
-			escreva_devagar("[TONY]Oi, tava mesmo esperando você!!"+"[VOCÊ]O que foi?"+"[TONY]Quer dar uma volta?"+"[VOCÊ]Já passam das seis, não podemos sair daqui"+"[TONY]É só não sermos pegos, qual é cara? desde quando você segue as regras?"+"[Tá legal, vamos]")
+			escreva_devagar("[NARRADOR]A aula acaba e você vai para a sala comunal e encontra Tony lá[TONY]Oi, tava mesmo esperando você!!"+"[VOCÊ]O que foi?"+"[TONY]Quer dar uma volta?"+"[VOCÊ]Já passam das seis, não podemos sair daqui"+"[TONY]É só não sermos pegos, qual é cara? desde quando você segue as regras?"+"[Tá legal, vamos]")
 			pare
 			caso 2:
 			escreva_devagar(nome+" *Todos se assustam e olham para o jogador, que com o grito, acordo*.\n")
@@ -172,6 +169,10 @@ programa
 			consequencia_ruim = +30
 			proximo(5000)
 			escreva_devagar("[NARRADOR]O jogador segue para a casa comunal "+casa+" e encontra Tony, e lá eles tem o seguinte diálogo[TONY]eai cara, tudo bem?[VOCÊ]Na real? Não, acabei de ser expulso da materia de poções[TONY]Agh, que droga cara[NARRADOR]Tony anda de um lado pro outro, parecendo ter uma ideia"+"[TONY] Vamos dar uma volta para te animar"+"[VOCÊ]Nâo posso sair daqui cara"+"[TONY]Desde quando você segue as regras??"+ "[VOCÊ]Tá bom, vamos")
+			caso contrario:
+			escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+			limpa()
+			fim_de_jogo()
 		}
 	}
 	funcao dia_e()
@@ -218,9 +219,10 @@ programa
 					escreva("***************************\n")
 					leia(qualquer_coisa[0])
 					limpa()
-					caso contrario :
-                    	escreva_devagar("resposta icorreta")
-                    	escolha_1()
+			          caso contrario:
+					escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+					limpa()
+					fim_de_jogo()
                    	}
 				caso 2:
 				escreva_devagar("[VOCÊ]Oi Lian, sabe onde posso conseguir um pouco de sanque de salamandra? [LIAM]Posso te arranjar, mas em troca quero algo de você\n [VOCÊ]O que extamente? [LIAM]Quero que coloque laxante na bebida do professor sina\n")
@@ -234,130 +236,127 @@ programa
                   	}
                    	escreva_devagar("[NARRADOR] Vocês vão para a sala dos professores, com a desculpa de ter que fazer um recuperação de nota com o professor Sina [LIAN] O plano é o seguinte, eu chamo ele para conversar sobre minha nota, e você aproveite que ele vai estar distraído e despeje o flur de estomago no suco de abobora que ele toma toda manhã [NARRADOR] Vocês vão para a sala dos professores, com a desculpa de ter que fazer um recuperação de nota com o professor Sina [LIAN] O plano é o seguinte, eu chamo ele para conversar sobre minha nota, e você aproveite que ele vai estar distraído e despeje o flur de estomago no suco de abobora que ele toma toda manhã [VOCÊ]Ok, entendido [NARRADOR]E assim é feito, Lian fala com o professor e você coloca o fluor na bebida dele [NARRADOR]Assim que você termina de despejar você faz um sinal para avisar Lian[NARRADOR]Você faazo sinal que combinou com Lian [NARRADOR]Lian percebe o sinal e encerra a conversa com o professor sina [NARRADOR]Vocês observam pelo lado de fora, de lá vocês conseguem ver o professor bebiricando o suco [NARRADOR]*já na sala comunal da"+casa+"* [LIAN]Aqui, o sangue de salamandra que você pediu [NARRADOR]Você pegaosangue que precisava e agradece [VOCê]Obrigado/n")
                	pare
-               	caso contrario:
-               	escreva_devagar("*Resposta incorreta\n*")
+                	caso contrario:
+				escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+				limpa()
+				fim_de_jogo()
                }
           }
           senao
           { 
-			 //fim de jogo 
+			 fim_de_jogo()
           }
 	}
-  funcao vcfoitomado()              
+  	funcao vcfoitomado()              
 	{ 
-    escreva_devagar("[NARRADOR]Você segue o resto do dia normalmente, a voz não volta em nenhum momento, e você até acha que se livrou dela [NARRADOR]Deu a hora de dormir, no jantar você mal tocou na comida, e se sentiu enjoado o tempo todo, além de suas mãos e braços latejando, e suas veias escurecendo [VOZ]Que droga, garoto(a)! Se continuar assim vai morrer antes de terminar a poção de cura, TE PEDI ALGO SIMPLES e em um dia você conseguiu apenas um dos intens da lista, garoto(a) inútil [NARRADOR]A voz ecoa em sua mente, você se deixa levar e desmaia mais uma vez")
-      //dois dias depois
-    escreva_devagar("[VOCÊ](asma) O que.. o que(asma)... o que aconteceu....(asma) [NARRADOR]Você está confuso, mas segue Tony assim mesmo [NARRADOR]Vocês seguem para a clareira, a mesma que estiveram naquele dia, noites atrás\n")
-  }
-  funcao capitulofinal() 
-  { 
-    escreva_devagar("[NARRADOR]Vocês chegam na clareira, e um sentimento esquisito toma conta de seu peito...Tony, ele está quieto demais e isso não énormal para o tony [VOCÊ]Tony! chega de silêncio, o que tá acontecendo? o que você tem??? [NARRADOR]Tony para no meio da clareira e observa você de longe, ele abre um sorriso perverso no rosto, que começa a se desfigurar [NARRADOR]Uma gosma verde começa a sair da boca de Tony, e seus olhos se reviram até a parte branca deles [VOCÊ]TONY, QUE MERDA É ESSA CAARA [TONY]Você realmente achou que esse garoto conseguiu te salvar sozinho? Acha mesmo que ele tm esse poder? [NARRADOR]A gosma começa a ter forma de um homem de 2 metros muito forte [VOCÊ]Deixe ele em paz, você já tem a mim !!! [TONY]Você não está entendendo, garoto tolo, a culpa de Tony estar assim é sua, quando você me deixou assumir o comando, seu corpo de verme fraco não aguentou, só precisei derrubar algumas lagrimas para Tony sentir pena, e então ele fez [VOCÊ]fez o que??? [TONY]Ele me transferiu para o próprio corpo, mas ele é bem mais forte que você, então assumi o controle mais rápido [TONY]E ele fez tudo pra que? pra salvar um sangue ruim como você? eu te achava tolo, mas esse Tony se superou [NARRADOR]Assim que o corpo de gosma verde se completa o de Tony caí no chão, você sente medo, talvez seu amigo tenha morrido, tenha morrido por sua causa.*<__BATALHA FINAL INICIADA__>* [VOCÊ]DEIXA ELE EEM PAZ\n")
-    proximo(6000)
-    escreva("**************************\n")
-    escreva("* 1 --> Petrificustotales \n")
-    escreva("**************************\n")
-    escreva("* 2 --> incendium         \n")
-    escreva("**************************\n")
-    leia(escolhas[1])
-    limpa()
-  escolha(opcao[15])
-  {
-     caso 1: 
+	    escreva_devagar("[NARRADOR]Você segue o resto do dia normalmente, a voz não volta em nenhum momento, e você até acha que se livrou dela [NARRADOR]Deu a hora de dormir, no jantar você mal tocou na comida, e se sentiu enjoado o tempo todo, além de suas mãos e braços latejando, e suas veias escurecendo [VOZ]Que droga, garoto(a)! Se continuar assim vai morrer antes de terminar a poção de cura, TE PEDI ALGO SIMPLES e em um dia você conseguiu apenas um dos intens da lista, garoto(a) inútil [NARRADOR]A voz ecoa em sua mente, você se deixa levar e desmaia mais uma vez")
+	      dois_dias_depois()
+	    escreva_devagar("[VOCÊ](asma) O que.. o que(asma)... o que aconteceu....(asma) [NARRADOR]Você está confuso, mas segue Tony assim mesmo [NARRADOR]Vocês seguem para a clareira, a mesma que estiveram naquele dia, noites atrás\n")
+	}
+ 	 funcao capitulofinal() 
+ 	 { 
+		escreva_devagar("[NARRADOR]Vocês chegam na clareira, e um sentimento esquisito toma conta de seu peito...Tony, ele está quieto demais e isso não énormal para o tony [VOCÊ]Tony! chega de silêncio, o que tá acontecendo? o que você tem??? [NARRADOR]Tony para no meio da clareira e observa você de longe, ele abre um sorriso perverso no rosto, que começa a se desfigurar [NARRADOR]Uma gosma verde começa a sair da boca de Tony, e seus olhos se reviram até a parte branca deles [VOCÊ]TONY, QUE MERDA É ESSA CAARA [TONY]Você realmente achou que esse garoto conseguiu te salvar sozinho? Acha mesmo que ele tm esse poder? [NARRADOR]A gosma começa a ter forma de um homem de 2 metros muito forte [VOCÊ]Deixe ele em paz, você já tem a mim !!! [TONY]Você não está entendendo, garoto tolo, a culpa de Tony estar assim é sua, quando você me deixou assumir o comando, seu corpo de verme fraco não aguentou, só precisei derrubar algumas lagrimas para Tony sentir pena, e então ele fez [VOCÊ]fez o que??? [TONY]Ele me transferiu para o próprio corpo, mas ele é bem mais forte que você, então assumi o controle mais rápido [TONY]E ele fez tudo pra que? pra salvar um sangue ruim como você? eu te achava tolo, mas esse Tony se superou [NARRADOR]Assim que o corpo de gosma verde se completa o de Tony caí no chão, você sente medo, talvez seu amigo tenha morrido, tenha morrido por sua causa.*<__BATALHA FINAL INICIADA__>* [VOCÊ]DEIXA ELE EEM PAZ\n")
+		proximo(6000)
+		escreva("**************************\n")
+		escreva("* 1 --> Petrificustotales \n")
+		escreva("**************************\n")
+		escreva("* 2 --> incendium         \n")
+		escreva("**************************\n")
+		leia(escolhas[1])
+		limpa()
+		escolha(opcao[15])
+		{
+			caso 1: 
+			escreva("[VOCÊ]PETRIFICUS TOTALES!\n")
+	     	escreva_devagar("[NARRADOR]O monstro usa um feitiço de proteção, e revida com um feitiço de dor. *vida -10, sanidade -20* ")
+	     	vida = vida -10
+			sanidade = sanidade -20
+			verificacao_vida()
+	          caso 2:
+	     	escreva("[VOCÊ]INCENDIUM!!!!!.[NARRADOR]Você acerta o monstro em cheio e não recebe nenhum dano")
+	     	bigboss = bigboss -30
+	     	caso contrario:
+			escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+			limpa()
+			fim_de_jogo()	      
+		}
 
-     escreva("[VOCÊ]PETRIFICUS TOTALES!\n")
-     escreva_devagar("[NARRADOR]O monstro usa um feitiço de proteção, e revida com um feitiço de dor. *vida -10, sanidade -20* ")
-     vida = vida -10
-     sanidade = sanidade -20
-     verificacao_vida()
-              
-     caso 2:
-     escreva("[VOCÊ]INCENDIUM!!!!!.[NARRADOR]Você acerta o monstro em cheio e não recebe nenhum dano")
-      bigboss = bigboss -30
-      
-  }
+		escreva_devagar("[NARRADOR]O monstro se prepara para outro ataque, o que você vai fazer?")
+		escreva("****************************\n")
+		escreva("* a --> se abaixar          \n")
+		escreva("****************************\n")
+		escreva("* b --> correr pro lado    *\n")
+		escreva("****************************\n")
+		leia(escolhas[2])
+		limpa()
+		escolha(opcaoc[2])
+		{
+			caso 'a':
+			escreva_devagar("[NARRADOR]Você se abaixa, mas o feitiço te acerta mesmo assim. *vida  -45, sanidade -30*\n")
+			vida = vida -45
+			sanidade = sanidade - 30
+			verificacao_vida()
 
-    escreva_devagar("[NARRADOR]O monstro se prepara para outro ataque, o que você vai fazer?")
-    escreva("****************************\n")
-    escreva("* a --> se abaixar          \n")
-    escreva("****************************\n")
-    escreva("* b --> correr pro lado    *\n")
-    escreva("****************************\n")
-    leia(escolhas[2])
-    limpa()
-    escolha(opcaoc[2])
+    			caso 'b': 
+			escreva_devagar("[NARRADOR]Você desvia consegue desviar com sucesso") 
+			escreva("******************************\n")
+			escreva("<digite (a) para contraatacar>\n")
+			escreva("******************************\n")
+			leia(opcaoc[2])
+			limpa()
+			escolha(opcaoc[2])
+			{ 
+				caso 'a': 
+				escreva_devagar("*bigboss -100")
+				verifica_vida_boss()
+				caso contrario:
+				escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+				limpa()
+				fim_de_jogo()
 
-  {
-
-    caso 'a':
-
-    escreva_devagar("[NARRADOR]Você se abaixa, mas o feitiço te acerta mesmo assim. *vida  -45, sanidade -30*\n")
-    vida = vida -45
-    sanidade = sanidade - 30
-    verificacao_vida()
-
-    caso 'b': 
-
-    escreva_devagar("[NARRADOR]Você desvia consegue desviar com sucesso") 
-
-    escreva("******************************\n")
-    escreva("<digite (a) para contraatacar>\n")
-    escreva("******************************\n")
-    leia(opcaoc[2])
-    limpa()
-    escolha(opcaoc[2])
-    { 
-
-         caso 'a': 
-
-         escreva_devagar("*bigboss -100")
-         verifica_vida_boss()
-
-    }
-    escreva_devagar("[NARRADOR]Agora, a decisão que pode custar sua vida, qual escolha você vai tomar?")
-    escreva("******************************\n")
-    escreva("* 1 --> AVADAQUEDABRA        *\n")
-    escreva("******************************\n")
-    escreva("* 2 --> SECTONSEMPRA          \n")
-    escreva("******************************\n")
-    leia(escolhas[3])
-    limpa()
-    escolha(escolhas[3])
-    {
-
-        caso 1:
-
-        escreva("[VOCÊ]AVADAQUEDABRA.") 
-        bigboss = -480
-        escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
-        pare
-
-        caso 2:
-        escreva("[VOCÊ]SECTONSEMPRA!!!!!!!!\n")
-        bigboss = 10
-        verifica_vida_boss()
-
-          escreva("******************************\n")
-          escreva("* a --> INCENDIUM             \n")
-          escreva("******************************\n")
-          escreva("* b --> REDUPTO               \n")
-          escreva("******************************\n")
+    			}
+   			escreva_devagar("[NARRADOR]Agora, a decisão que pode custar sua vida, qual escolha você vai tomar?")
+   			escreva("******************************\n")
+   			escreva("* 1 --> AVADAQUEDABRA        *\n")
+   			escreva("******************************\n")
+   			escreva("* 2 --> SECTONSEMPRA          \n")
+   			escreva("******************************\n")
+   			leia(escolhas[3])
+    			limpa()
+    			escolha(escolhas[3])
+    			{
+				caso 1:
+				escreva("[VOCÊ]AVADAQUEDABRA.") 
+				bigboss = -480
+				escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
+				pare
+				caso 2:
+				escreva("[VOCÊ]SECTONSEMPRA!!!!!!!!\n")
+				bigboss = 10
+				verifica_vida_boss()
+		          escreva("******************************\n")
+		          escreva("* a --> INCENDIUM             \n")
+     		     escreva("******************************\n")
+    			     escreva("* b --> REDUPTO               \n")
+		          escreva("******************************\n")
           leia(opcaoc[2])
           limpa()
           escolha(opcaoc[2])
           {
-             caso 'a':
-          escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
-          pare 
-             caso 'b':
-
-             escreva_devagar("[NARRADOR]Você erra a mira, Tony é possuido, outra vez... [TONY]Garoto(a) tolo(a), sorte sua que eu estou fraco, até mais"+nome+" "+sobrenome+"nos veremos em breveHAYUAHUHAUHAUHUAHUAhuah\n" )
-             escreva_devagar("*seu resultado é incerto, você não perdeu e nem ganhou, mas por enquanto é:  ")
-             //funcaofim de jogo
-
-             escreva_devagar("aos comprimentos de Walmonn e Evillyn, muito obrigada por jogar:)")
-             pare
-          
-          
+             	caso 'a':
+          	escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
+          	pare 
+             	caso 'b':
+             	escreva_devagar("[NARRADOR]Você erra a mira, Tony é possuido, outra vez... [TONY]Garoto(a) tolo(a), sorte sua que eu estou fraco, até mais"+nome+" "+sobrenome+"nos veremos em breveHAYUAHUHAUHAUHUAHUAhuah\n" )
+             	escreva_devagar("*seu resultado é incerto, você não perdeu e nem ganhou, mas por enquanto é:  ")
+             	fim_de_jogo()
+             	escreva_devagar("aos comprimentos de Walmonn e Evillyn, muito obrigada por jogar:)")
+             	pare
+             	caso contrario:
+			escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+			limpa()
+			fim_de_jogo()
+			
           }
     }
 
@@ -504,7 +503,71 @@ programa
 			caso 2:
 			escreva_devagar("[VOCÊ]EXTERMINION!! [NITA]QUAL È O SE PROBLMA HOJE?, não precisava ter machucado eles [VOCÊ]d..desculpa, não sei o que deu em mim [NITA]Espera lá fora, não quero que machuque mais nenhum deles! [VOCÊ]Foi mal nita[NARRADOR]Nita sai da caverna irritada, no caminho pra casa vocês não trocam nenhuma palavra, quando chegam no castelo ela te da um frasco com o sangue e vai embora sem dizer uma palavra\n")
 			pare
+			caso contrario:
+			escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+			limpa()
+			fim_de_jogo()
 		}
+	}
+	funcao dois_dias_depois()
+	{
+		escreva("DDDDDDDDDDDDD                           iiii                         \n") 
+		escreva("D::::::::::::DDD                       i::::i                       \n") 
+		escreva("D:::::::::::::::DD                      iiii                        \n") 
+		escreva("DDD:::::DDDDD:::::D                                                  \n") 
+		escreva("  D:::::D    D:::::D    ooooooooooo   iiiiiii     ssssssssss        \n")
+		escreva("  D:::::D     D:::::D oo:::::::::::oo i:::::i   ss::::::::::s       \n") 
+		escreva("  D:::::D     D:::::Do:::::::::::::::o i::::i ss:::::::::::::s      \n") 
+		escreva("  D:::::D     D:::::Do:::::ooooo:::::o i::::i s::::::ssss:::::s     \n") 
+		escreva("  D:::::D     D:::::Do::::o     o::::o i::::i  s:::::s  ssssss      \n") 
+		escreva("  D:::::D     D:::::Do::::o     o::::o i::::i    s::::::s           \n") 
+		escreva("  D:::::D     D:::::Do::::o     o::::o i::::i       s::::::s        \n") 
+		escreva("  D:::::D    D:::::D o::::o     o::::o i::::i ssssss   s:::::s \n")
+		escreva("DDD:::::DDDDD:::::D o:::::ooooo:::::oi::::::is:::::ssss::::::s \n")
+		escreva("D:::::::::::::::DD   o:::::::::::::::oi::::::is::::::::::::::s \n") 
+		escreva("D::::::::::::DDD      oo:::::::::::oo i::::::i s:::::::::::ss  \n") 
+		escreva("DDDDDDDDDDDDD           ooooooooooo   iiiiiiii  sssssssssss    \n")
+		proximo(3000)
+		escreva("DDDDDDDDDDDDD          iiii\n")
+		escreva("D::::::::::::DDD      i::::i\n")
+		escreva("D:::::::::::::::DD     iiii\n")
+		escreva("DDD:::::DDDDD:::::D\n")
+		escreva("  D:::::D    D:::::D iiiiiii   aaaaaaaaaaaaa      ssssssssss\n")
+		escreva("  D:::::D     D:::::Di:::::i   a::::::::::::a   ss::::::::::s\n")
+		escreva("  D:::::D     D:::::D i::::i   aaaaaaaaa:::::ass:::::::::::::s\n")
+		escreva("  D:::::D     D:::::D i::::i            a::::as::::::ssss:::::s\n")
+		escreva("  D:::::D     D:::::D i::::i     aaaaaaa:::::a s:::::s  ssssss\n")
+		escreva("  D:::::D     D:::::D i::::i   aa::::::::::::a   s::::::s\n")
+		escreva("  D:::::D     D:::::D i::::i  a::::aaaa::::::a      s::::::s\n")
+		escreva("  D:::::D    D:::::D  i::::i a::::a    a:::::assssss   s:::::s\n")
+		escreva("DDD:::::DDDDD:::::D  i::::::ia::::a    a:::::as:::::ssss::::::s\n")
+		escreva("D:::::::::::::::DD   i::::::ia:::::aaaa::::::as::::::::::::::s\n")
+		escreva("D::::::::::::DDD     i::::::i a::::::::::aa:::as:::::::::::ss\n")
+		escreva("DDDDDDDDDDDDD        iiiiiiii  aaaaaaaaaa  aaaa sssssssssss\n")
+		proximo(3000)
+		escreva("DDDDDDDDDDDDD                                                                   iiii\n")
+		escreva("D::::::::::::DDD                                                               i::::i\n")
+		escreva("D:::::::::::::::DD                                                              iiii\n")
+		escreva("DDD:::::DDDDD:::::D\n")
+		escreva("  D:::::D    D:::::D     eeeeeeeeeeee    ppppp   ppppppppp      ooooooooooo   iiiiiii     ssssssssss\n")
+		escreva("  D:::::D     D:::::D  ee::::::::::::ee  p::::ppp:::::::::p   oo:::::::::::oo i:::::i   ss::::::::::s\n")
+		escreva("  D:::::D     D:::::D e::::::eeeee:::::eep:::::::::::::::::p o:::::::::::::::o i::::i ss:::::::::::::s\n")
+		escreva("  D:::::D     D:::::De::::::e     e:::::epp::::::ppppp::::::po:::::ooooo:::::o i::::i s::::::ssss:::::s\n")
+		escreva("  D:::::D     D:::::De:::::::eeeee::::::e p:::::p     p:::::po::::o     o::::o i::::i  s:::::s  ssssss\n")
+		escreva("  D:::::D     D:::::De:::::::::::::::::e  p:::::p     p:::::po::::o     o::::o i::::i    s::::::s\n")
+		escreva("  D:::::D     D:::::De::::::eeeeeeeeeee   p:::::p     p:::::po::::o     o::::o i::::i       s::::::s\n")
+		escreva("  D:::::D    D:::::D e:::::::e            p:::::p    p::::::po::::o     o::::o i::::i ssssss   s:::::s\n")
+		escreva("DDD:::::DDDDD:::::D  e::::::::e           p:::::ppppp:::::::po:::::ooooo:::::oi::::::is:::::ssss::::::s\n")
+		escreva("D:::::::::::::::DD    e::::::::eeeeeeee   p::::::::::::::::p o:::::::::::::::oi::::::is::::::::::::::s\n")
+		escreva("D::::::::::::DDD       ee:::::::::::::e   p::::::::::::::pp   oo:::::::::::oo i::::::i s:::::::::::ss\n")
+		escreva("DDDDDDDDDDDDD            eeeeeeeeeeeeee   p::::::pppppppp       ooooooooooo   iiiiiiii  sssssssssss\n")
+		escreva("                                          p:::::p\n")
+		escreva("                                          p:::::p\n")
+		escreva("                                         p:::::::p\n")
+		escreva("                                         p:::::::p\n")
+		escreva("                                         p:::::::p\n")
+		escreva("                                         ppppppppp\n")
+
 	}
 	funcao fim_de_jogo()
 	{

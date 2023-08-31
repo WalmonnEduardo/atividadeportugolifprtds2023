@@ -1,0 +1,642 @@
+programa
+{
+	inclua biblioteca Texto --> tx 
+	inclua biblioteca Util --> u
+	caracter opcaoc[20]
+	cadeia nome, sobrenome ,casa
+	inteiro sanidade = 120
+	inteiro vida = 280
+	inteiro poder = 45
+	inteiro opcao[10]
+	inteiro escolhas[10]
+	inteiro carta_expulsao = 0
+	inteiro status = 180
+	inteiro consequencia_ruim = 0
+	inteiro pocao = 1
+	inteiro pocao_feita = 0
+	inteiro lista_1[18]
+	inteiro qualquer_coisa[10]
+	inteiro bigboss = 480
+	inteiro derrota_monstro = 0
+	funcao inicio()
+	{
+		capitulo1()
+		proximo(6000)
+		capitulo2()
+		proximo(6000)
+		dia_e()
+		proximo(6000)
+		vcfoitomado()
+	} //fim inicio
+	funcao capitulo1()
+	{
+		escreva_devagar("[PROFESSOR] Bem vindo(a) a Hogwarts, pequen@ bruxo(a)[PROFESSOR] Sou o professor Alastor Moody.[ALASTOR MOODY] Qual é seu nome?\n")
+		leia(nome) 
+		escreva_devagar("E seu sobrenome?\n")  
+		leia(sobrenome)
+		escreva_devagar("[ALASTOR MOODY] Vamos então, "+ sobrenome+ ", não vai querer perder a Cerimônia de celeção[PASSOS][PASSOS]\n*Você caminha surpreso(a) com a velocidade do professor, que mesmo de bengala, o faz correr*\n*Você passou tanto tempo pensando nisso que quando percebeu ja estava nao refeitório*[PROFESSOR MACABRO] A CERIMÔNIA VAI COMEÇAR!!!!!!\n*Você vê uma garota indo em direção a um chapéu, e isso te causa estranhamento*\n*Um velho de barba esplica que esse é o chapéu celetor, ele analiza seus mais profundos desejos, e te manda pra casa que achar melhor*\n")
+		proximo(6000)
+		escreva_devagar("[CHAPÉU SELETOR] Grfinória!!![GAROTO] Já é a vigésima vez que cai grifinória, parece que eles deram sorte com os calouros esse ano, *Um garoto fala ao seu lado*[TONY] Aliás, prazer, me chamo Tony, *Ele diz*[TONY] Qual é, você não fala?[VOCÊ] Ah, desculpe, estava esperando ser chamad@ pra seleção de casas mas ainda não fui\n")
+		escreva_devagar("[VOCÊ]Me chamo "+nome+ ".") 
+		escreva_devagar("[TONY]Prazer "+nome+ ".")
+		proximo(6000)
+		escreva_devagar("[CARINHA QUE TA LENDO OS NOMES] Agh, como se pronúncia esse nome,"+ nome+ " venha para seleção!!![NARRADOR] Você pode tirar uma das 4 casas, são elas , Grifinória, Corvinal, Lufa-Lufa ou Sonserina, boa sorte!\n") 
+		casa_sorteada()
+		escreva_devagar("[TONY] Bom, parece que estamos juntos [VOCÊ] É, parece que sim")	
+	} //fim conversa1
+	funcao casa_sorteada()     
+	{
+		inteiro casa_s = u.sorteia(1, 4)
+		u.aguarde(1000)
+		se(casa_s == 1)
+		{		
+			escreva_devagar("GRIFINÓRIAA!!!!!!!!!!!!!\n") 
+			casa = "GRIFINÓRIAA"	
+		}
+		senao se(casa_s == 2) 
+		{ 		
+			escreva_devagar( "CORVINAL!!!!!\n")
+			casa = "CORVINAL"
+		}
+		senao se(casa_s == 3) 
+		{ 	
+			escreva_devagar("LUFA-LUFA!!!!!!!!!!\n") 
+			casa = "LUFA-LUFA"
+		}
+		senao se(casa_s == 4) 
+		{
+			escreva_devagar("SONSERINA!!!!!!!!!!!!!\n") 
+			casa = "SONSERINA"
+		}
+	}// fim casa sorteada
+	funcao proximo(inteiro t)
+	{
+		u.aguarde(t)
+		limpa()
+	}
+	funcao capitulo2()
+	{
+		escreva("   SSSSSSSSSSSSSSS                      iiii                  \n")
+		escreva(" SS:::::::::::::::S                    i::::i                 \n")
+		escreva("S:::::SSSSSS::::::S                     iiii                  \n")                                                                                        
+		escreva("S:::::S     SSSSSSS                                          \n")
+		escreva("S:::::S                eeeeeeeeeeee   iiiiiii     ssssssssss \n")
+		escreva("S:::::S              ee::::::::::::ee i:::::i   ss::::::::::s \n")
+		escreva(" S::::SSSS          e::::::eeeee:::::eei::::i ss:::::::::::::s \n")
+		escreva("  SS::::::SSSSS    e::::::e     e:::::ei::::i s::::::ssss:::::s\n")
+		escreva("   SSS::::::::SS  e:::::::eeeee::::::ei::::i  s:::::s  ssssss\n")
+		escreva("       SSSSSS::::S e:::::::::::::::::e i::::i    s::::::s     \n")
+		escreva("            S:::::Se::::::eeeeeeeeeee  i::::i       s::::::s  \n")
+		escreva("            S:::::Se:::::::e           i::::i ssssss   s:::::s\n")
+		escreva("SSSSSSS     S:::::Se::::::::e         i::::::is:::::ssss::::::s\n")
+		escreva("S::::::SSSSSS:::::S e::::::::eeeeeeee i:::::::::s:is::::::::::\n")
+		escreva("S:::::::::::::::SS   ee:::::::::::::e i::::::i s:::::::::::ss\n")
+		escreva(" SSSSSSSSSSSSSSS       eeeeeeeeeeeeee iiiiiiii  sssssssssss  \n")
+		proximo(3000)
+		escreva("MMMMMMMM               MMMMMMMM                                                                         \n")
+		escreva("M:::::::M             M:::::::M                                                                         \n")
+		escreva("M::::::::M           M::::::::M                                                                         \n")                                                                                        
+		escreva("M:::::::::M         M:::::::::M                                                                          \n")
+		escreva("M::::::::::M       M::::::::::M    eeeeeeeeeeee        ssssssssss       eeeeeeeeeeee        ssssssssss  \n")
+		escreva("M:::::::::::M     M:::::::::::M  ee::::::::::::ee    ss::::::::::s    ee::::::::::::ee    ss::::::::::s  \n")
+		escreva("M:::::::M::::M   M::::M:::::::M e::::::eeeee:::::eess:::::::::::::s  e::::::eeeee:::::eess:::::::::::::s \n")
+		escreva("M::::::M M::::M M::::M M::::::Me::::::e     e:::::es::::::ssss:::::se::::::e     e:::::es::::::ssss:::::s\n")
+		escreva("M::::::M  M::::M::::M  M::::::Me:::::::eeeee::::::e s:::::s  ssssss e:::::::eeeee::::::e s:::::s  ssssss\n")
+		escreva("M::::::M   M:::::::M   M::::::Me:::::::::::::::::e    s::::::s      e:::::::::::::::::e    s::::::s      \n")
+		escreva("M::::::M    M:::::M    M::::::Me::::::eeeeeeeeeee        s::::::s   e::::::eeeeeeeeeee        s::::::s  \n")
+		escreva("M::::::M     MMMMM     M::::::Me:::::::e           ssssss   s:::::s e:::::::e           ssssss   s:::::s\n")
+		escreva("M::::::M               M::::::Me::::::::e          s:::::ssss::::::se::::::::e          s:::::ssss::::::s\n")
+		escreva("M::::::M               M::::::M e::::::::eeeeeeee  s::::::::::::::s  e::::::::eeeeeeee  s::::::::::::::s \n")
+		escreva("M::::::M               M::::::M  ee:::::::::::::e   s:::::::::::ss    ee:::::::::::::e   s:::::::::::ss  \n")
+		escreva("MMMMMMMM               MMMMMMMM    eeeeeeeeeeeeee    sssssssssss        eeeeeeeeeeeeee    sssssssssss    \n")
+		proximo(3000)
+		
+		escreva("DDDDDDDDDDDDD                                                                   iiii   \n")
+		escreva("D::::::::::::DDD                                                               i::::i    \n")
+		escreva("D:::::::::::::::DD                                                              iiii        \n")
+		escreva("DDD:::::DDDDD:::::D                                                                                     \n")
+		escreva("  D:::::D    D:::::D     eeeeeeeeeeee    ppppp   ppppppppp      ooooooooooo   iiiiiii     ssssssssss   \n")
+		escreva("  D:::::D     D:::::D  ee::::::::::::ee  p::::ppp:::::::::p   oo:::::::::::oo i:::::i   ss::::::::::s  \n")
+		escreva("  D:::::D     D:::::D e::::::eeeee:::::eep:::::::::::::::::p o:::::::::::::::o i::::i ss:::::::::::::s \n")
+		escreva("  D:::::D     D:::::De::::::e     e:::::epp::::::ppppp::::::po:::::ooooo:::::o i::::i s::::::ssss:::::s\n")
+		escreva("  D:::::D     D:::::De:::::::eeeee::::::e p:::::p     p:::::po::::o     o::::o i::::i  s:::::s  ssssss\n")                                             escreva("  D:::::D     D:::::De:::::::::::::::::e  p:::::p     p:::::po::::o     o::::o i::::i    s::::::s       \n")
+		escreva("  D:::::D     D:::::De::::::eeeeeeeeeee   p:::::p     p:::::po::::o     o::::o i::::i       s::::::s   \n")
+		escreva("  D:::::D    D:::::D e:::::::e            p:::::p    p::::::po::::o     o::::o i::::i ssssss   s:::::s \n")
+		escreva("DDD:::::DDDDD:::::D  e::::::::e           p:::::ppppp:::::::po:::::ooooo:::::oi::::::is:::::ssss::::::s\n")
+		escreva("D:::::::::::::::DD    e::::::::eeeeeeee   p::::::::::::::::p o:::::::::::::::oi::::::is::::::::::::::s \n")
+		escreva("D::::::::::::DDD       ee:::::::::::::e   p::::::::::::::pp   oo:::::::::::oo i::::::i s:::::::::::ss \n")
+		escreva("DDDDDDDDDDDDD            eeeeeeeeeeeeee   p::::::pppppppp       ooooooooooo   iiiiiiii  sssssssssss    \n")
+		escreva("                                          p:::::p \n")
+		escreva("                                          p:::::p \n")
+		escreva("                                         p:::::::p                                                    \n")
+		escreva("                                         p:::::::p                                                    \n")
+		escreva("                                         p:::::::p                                                    \n")
+		escreva("                                         ppppppppp                                                    \n")
+		proximo(3000)
+		escreva_devagar("[NARRADOR] às 09h da manhã você desce com o Tony pro café, e depois vai para a aula de poções.\n")
+		escreva_devagar("Você prestou atenção na aula?\n\n")
+		escreva("**************\n")
+		escreva("* 1 --> Sim  *\n")
+		escreva("**************\n")
+		escreva("* 2 --> Não  *\n")
+		escreva("**************\n\n")
+		leia(opcao[0])
+		limpa()
+		escolha(opcao[0])
+		{
+			caso 1:
+			escreva_devagar("O professor Sina passa entregando um pergaminho.\n")
+			escreva_devagar("[PROFESSOR SINA] Wiggenweld foi um estudioso do século XIX que queria saber curar uma pessoa sem medicina trouxa, e sem varinha\n")
+			escreva_devagar("Siga a receita a baixo e vão conseguir fazer a poção com sucesso.\n\n")
+			pocao_cura()
+              	u.aguarde(10000)
+               pocao = +1
+			escreva_devagar("[NARRADOR]A aula acaba e você vai para a sala comunal e encontra Tony lá")
+			escreva_devagar("[TONY]Oi, tava mesmo esperando você!!"+"[VOCÊ]O que foi?"+"[TONY]Quer dar uma volta?"+"[VOCÊ]Já passam das seis, não podemos sair daqui"+"[TONY]É só não sermos pegos, qual é cara? desde quando você segue as regras?"+"[Tá legal, vamos]")
+			pare
+			caso 2:
+			escreva_devagar(nome+" *Todos se assustam e olham para o jogador, que com o grito, acordo*.\n")
+			escreva_devagar("Se minha aula é tão entediante assim para dormir, saia, você está espulso da matéria de poções\n\n")
+			proximo(5000)
+			escreva_devagar("               Carta de Espulsão\n"			)
+			escreva_devagar("        Venho informar que por meio deste o aluno\n "	)
+			escreva_devagar("                       "+nome+"\n"								)
+			escreva_devagar("                está expulso da disciplina\n"			)
+			escreva_devagar("              de poções pois demonstrou tamanha\n"		)
+			escreva_devagar("                     falta de interesse\n"			)
+			escreva_devagar("             dormindo enquanto eu dava minha aula\n"	)
+			escreva_devagar("              os cumprimentos do PROFESSOR SINA\n"		)
+			carta_expulsao += 1
+			proximo(10000)
+			escreva_devagar("Todos olham pro aluno e ele não entende pq tanto espanto sendo que eram só poções,\n mas para se formar você precisa de poções, e agora que está expulso da matéria só vai conseguir aprender com os livros e de formas\n ilegais.")
+			consequencia_ruim = +30
+			proximo(5000)
+			escreva_devagar("[NARRADOR]O jogador segue para a casa comunal "+casa+" e encontra Tony, e lá eles tem o seguinte diálogo[TONY]eai cara, tudo bem?[VOCÊ]Na real? Não, acabei de ser expulso da materia de poções[TONY]Agh, que droga cara[NARRADOR]Tony anda de um lado pro outro, parecendo ter uma ideia"+"[TONY] Vamos dar uma volta para te animar"+"[VOCÊ]Nâo posso sair daqui cara"+"[TONY]Desde quando você segue as regras??"+ "[VOCÊ]Tá bom, vamos")
+		}
+	}
+	funcao dia_e()
+	{
+		escreva_devagar("[NARRADOR]Vocês chegam em um morrinho, no topo dele tem uma pequena cabana, e você se surpreende por nunca ter visto ela antes [VOCÊ]Como eu nunca vi essa casa antes?[TONY]relaxa aí cabeção, você só está vendo porquê eu quero que veja [NARRADOR]Vocês entram na cabana, e ela é maior por dentro, tipo, muito maior, mesmo depois de tanto tempo no mundo dos bruxos, você ainda não entende como isso é possível [TONY]Legal né?, eu mesmo que encantei, quando meu pai ainda era vivo, ele me ensinou tudo sobre magia, agora só preciso do certificado para transformar esse meu conhecimento em algo legal, já que ele é considerado clandestino [NARRADOR] Tony mistura algumas coisas em um caldeirão, depois disso uma fumaça roxa sobre, e Tony conjura um feitiço que a transforma em um pequeno cristal [TONY] Vamos, meu cliente deve estar esperando [NARRADOR]Você para quando escuta isso [VOCÊ]Qual é Tony, contrabando é ilegal e você sabe bem disso [TONY]óbvio que eu sei, mas diferente de você, não nasci herdeiro, e preciso pagar minhas próprias contas [NARRADOR]O tom de Tony pareceu um pouco magoado, então você resolveu o deixar em paz  [NARRADOR]Quando vocês chegam em uma clareira um homem surge das sombras, com um sorriso perverso ele encara Tony e parece muito animado quando Tony joga o cristal na grama molhada [TONY]Agora me pague como combinamos\n"+"[NARRADOR] O homem faz uma cara feia e joga o um saco de moedas pra Tony, que da as costas assim que o pega, e te chama para ir embora/n"+"[NARRADOR]O homem desaparece e você segue Tony, mas antes de voltarem para a trilha, você ~e um pergaminho no chão, e se abaixa rapidamente para apanha-lo, colocando rapidamente em seu bolso"+"[NARRADOR]Quando vocês chegam na cabana, Tony se despede e diz que vai passar a noite nela, e você segue para seu quarto ansioso para descobrir o que contém no pergaminho[NARRADOR]você chega no seu quarto e corre para a escrivaninha [NARRADOR]Ao abrir o pergaminho, a única coisa que você pode observar é um pequena gota de tinta, e quando você passa o dedo, dobre ela, a tormenta começa [NARRADOR]A tinta entra em seu dedo, percorrendo suas veias numa dor agoniante, e junto dessa dor uma voz surge[VOZ]GAroto(a) tolo(a) AHHAAHAUHAUHUAHUHAUAHUAH, muiiito toloooooooo [NARRADOR]você cai da cadeira e se coloca de joelhos, encostando a cabeça no chão, a fim de diminuir a dor"+"[PASSOS] [PASSOS]\n [HERNANDEZ]Cara...tá tudo bem? [VOZ]RESPONDA ELE RESPONDA ELE AGORAAAAAAAAAAAAAAA\n [VOCÊ]tá...eu...eu...sou..agh...sonâmbulo [HERNANDES]Tá certo...boa noite então[VOZ]Vai dormir garoto, amanhã você vai sofrer [VOCÊ] O que você quer comigo, me deixa em paz por fav- [VOZ]EU DISSE PRA IR DORMIR, GAROTO(A) INSOLENTE [NARRADOR]A dor fez você desmaiar e acordar no outro dia, sua mão estava latejando [VOZ]Você não passa de um peão agora, eu te controlo, você não tem mais vontades [VOZ]Coloque uma roupa que cubra seus braços, as pessoas podem notar a maldição[NARRADOR] E assim você fez [VOZ] Sua missão é fazer uma poção de cura, e tomar, vou te deixar em paz, mas saiba que eu escuto tudo, e vou tomar o controle quando eu quiser\n")
+		sanidade = -5
+		verificacao_vida()
+		se(pocao == 2 )
+		{
+			escreva_devagar("[VOCÊ]Só preciso dos intens que estão na lista, vamos lá")
+			pocao_cura()   
+			escreva_devagar("*************************\n")
+			escreva_devagar("* 1 --> Falar com Nita **\n")
+			escreva_devagar("* 2 --> Falar com Lian **\n")
+			escreva_devagar("*************************\n")
+			leia(opcao[1])
+			limpa()
+			escolha(opcao[1])
+			{
+				caso 1:
+				escreva_devagar("[VOCÊ]Oi nita, tudo bem?[NITA]Oi"+nome+"Estou bem, mas você não parece estar[VOCÊ]Relaxa...é só um resfriado, enfim, sabe onde posso arrajar um pouco de sangue de salamandra? [NITA]Estava indo estrair um pouco agora mesmo, quer ir? é meio puxado mas não demora muito não [VOCÊ]Se não for muito incomodo [NITA]Não é incomodo nenhum, na verdade é bom ter um ajudante [NARRADOR]Vocês andam numa trilha por meia hora até das de cara com uma caverna, lá você pode ver ovos brilhantes e criaturas magicas [NITA]Apanhe sua varinha, vamos precisar dela pra passar [VOCÊ]Qual feitiço eu devo usar? [NITA]Exmay, vai espantar eles, mas não vai machuca-los [VOZ]Use exterminion, quero que os mate\n")
+				leia(escolhas[0])
+				escreva("*********************\n")
+                    escreva("* 1 ---> exmay      *\n")
+                    escreva("* 2 ---> exterminion*\n")
+                    escreva("*********************\n")
+                    leia(opcao[1])
+                    limpa()
+                    escolha(opcao[1])
+                    {
+                    	caso 1:
+                    	escreva_devagar("[NITA]EXMAY!\n [VOCÊ]EXMAY!!\n")
+                    	escreva_devagar("[VOZ]COMO OUSA ME DESOBEDECER?? [NARRADOR]Uma dor toma sua cabeça, você fica palído e luta pra ficar em pé [NITA]Tá tudo bem? [VOCÊ]Não tomei café hoje, devo estar pouco tonto(a) [NITA]Certo...aqui, já consegui sangue o suficiente, vamos ir embora, você não parece bem\n")
+                    	sanidade = -20
+                    	verificacao_vida()
+                    	escreva_devagar("[NITA]Aqui, sua parte [VOCÊ]o..obriga..da obrigada [NITA]Por nada "+nome+" vê se passa lá na enfermaria, sua cara está horrível hahahahahah\n") 
+                    	pare
+                    	caso 2:
+					escreva_devagar("[VOCÊ]EXTERMINION!!\n [NITA]QUAL È O SE PROBLMA HOJE?, não precisava ter machucado eles\n [VOCÊ]d..desculpa, não sei o que deu em mim [NITA]Espera lá fora, não quero que machuque mais nenhum deles! [VOCÊ]Foi mal nita\n")
+					escreva_devagar("[NARRADOR]Nita sai da caverna irritada, no caminho pra casa vocês não trocam nenhuma palavra, quando chegam no castelo ela te da um frasco com o sangue e vai embora sem dizer uma palavra\n")
+					status = -20
+					escreva("***************************\n")
+					escreva("-<digite 1 para ir embora>-\n")
+					escreva("***************************\n")
+					leia(qualquer_coisa[0])
+					limpa()
+					caso contrario :
+                    	escreva_devagar("resposta icorreta")
+                    	escolha_1()
+                   	}
+				caso 2:
+				escreva_devagar("[VOCÊ]Oi Lian, sabe onde posso conseguir um pouco de sanque de salamandra? [LIAM]Posso te arranjar, mas em troca quero algo de você\n [VOCÊ]O que extamente? [LIAM]Quero que coloque laxante na bebida do professor sina\n")
+                   	se(carta_expulsao == 1)
+                   	{
+                    	escreva_devagar("[NARRADOR]A ideia de colocar um laxante na bebida do professor que te expulsou da aula é bem animadora\n [VOCÊ]Tô dentro!")
+                   	}
+                    senao
+                   	{
+                      	escreva_devagar("[VOCÊ]Agh, pode ser então")
+                  	}
+                   	escreva_devagar("[NARRADOR] Vocês vão para a sala dos professores, com a desculpa de ter que fazer um recuperação de nota com o professor Sina [LIAN] O plano é o seguinte, eu chamo ele para conversar sobre minha nota, e você aproveite que ele vai estar distraído e despeje o flur de estomago no suco de abobora que ele toma toda manhã [NARRADOR] Vocês vão para a sala dos professores, com a desculpa de ter que fazer um recuperação de nota com o professor Sina [LIAN] O plano é o seguinte, eu chamo ele para conversar sobre minha nota, e você aproveite que ele vai estar distraído e despeje o flur de estomago no suco de abobora que ele toma toda manhã [VOCÊ]Ok, entendido [NARRADOR]E assim é feito, Lian fala com o professor e você coloca o fluor na bebida dele [NARRADOR]Assim que você termina de despejar você faz um sinal para avisar Lian[NARRADOR]Você faazo sinal que combinou com Lian [NARRADOR]Lian percebe o sinal e encerra a conversa com o professor sina [NARRADOR]Vocês observam pelo lado de fora, de lá vocês conseguem ver o professor bebiricando o suco [NARRADOR]*já na sala comunal da"+casa+"* [LIAN]Aqui, o sangue de salamandra que você pediu [NARRADOR]Você pegaosangue que precisava e agradece [VOCê]Obrigado/n")
+               	pare
+               	caso contrario:
+               	escreva_devagar("*Resposta incorreta\n*")
+               }
+          }
+          senao
+          { 
+			 //fim de jogo 
+          }
+	}
+  funcao vcfoitomado()              
+	{ 
+    escreva_devagar("[NARRADOR]Você segue o resto do dia normalmente, a voz não volta em nenhum momento, e você até acha que se livrou dela [NARRADOR]Deu a hora de dormir, no jantar você mal tocou na comida, e se sentiu enjoado o tempo todo, além de suas mãos e braços latejando, e suas veias escurecendo [VOZ]Que droga, garoto(a)! Se continuar assim vai morrer antes de terminar a poção de cura, TE PEDI ALGO SIMPLES e em um dia você conseguiu apenas um dos intens da lista, garoto(a) inútil [NARRADOR]A voz ecoa em sua mente, você se deixa levar e desmaia mais uma vez")
+      //dois dias depois
+    escreva_devagar("[VOCÊ](asma) O que.. o que(asma)... o que aconteceu....(asma) [NARRADOR]Você está confuso, mas segue Tony assim mesmo [NARRADOR]Vocês seguem para a clareira, a mesma que estiveram naquele dia, noites atrás\n")
+  }
+  funcao capitulofinal() 
+  { 
+    escreva_devagar("[NARRADOR]Vocês chegam na clareira, e um sentimento esquisito toma conta de seu peito...Tony, ele está quieto demais e isso não énormal para o tony [VOCÊ]Tony! chega de silêncio, o que tá acontecendo? o que você tem??? [NARRADOR]Tony para no meio da clareira e observa você de longe, ele abre um sorriso perverso no rosto, que começa a se desfigurar [NARRADOR]Uma gosma verde começa a sair da boca de Tony, e seus olhos se reviram até a parte branca deles [VOCÊ]TONY, QUE MERDA É ESSA CAARA [TONY]Você realmente achou que esse garoto conseguiu te salvar sozinho? Acha mesmo que ele tm esse poder? [NARRADOR]A gosma começa a ter forma de um homem de 2 metros muito forte [VOCÊ]Deixe ele em paz, você já tem a mim !!! [TONY]Você não está entendendo, garoto tolo, a culpa de Tony estar assim é sua, quando você me deixou assumir o comando, seu corpo de verme fraco não aguentou, só precisei derrubar algumas lagrimas para Tony sentir pena, e então ele fez [VOCÊ]fez o que??? [TONY]Ele me transferiu para o próprio corpo, mas ele é bem mais forte que você, então assumi o controle mais rápido [TONY]E ele fez tudo pra que? pra salvar um sangue ruim como você? eu te achava tolo, mas esse Tony se superou [NARRADOR]Assim que o corpo de gosma verde se completa o de Tony caí no chão, você sente medo, talvez seu amigo tenha morrido, tenha morrido por sua causa.*<__BATALHA FINAL INICIADA__>* [VOCÊ]DEIXA ELE EEM PAZ\n")
+    proximo(6000)
+    escreva("**************************\n")
+    escreva("* 1 --> Petrificustotales \n")
+    escreva("**************************\n")
+    escreva("* 2 --> incendium         \n")
+    escreva("**************************\n")
+    leia(escolhas[1])
+    limpa()
+  escolha(opcao[15])
+  {
+     caso 1: 
+
+     escreva("[VOCÊ]PETRIFICUS TOTALES!\n")
+     escreva_devagar("[NARRADOR]O monstro usa um feitiço de proteção, e revida com um feitiço de dor. *vida -10, sanidade -20* ")
+     vida = vida -10
+     sanidade = sanidade -20
+     verificacao_vida()
+              
+     caso 2:
+     escreva("[VOCÊ]INCENDIUM!!!!!.[NARRADOR]Você acerta o monstro em cheio e não recebe nenhum dano")
+      bigboss = bigboss -30
+      
+  }
+
+    escreva_devagar("[NARRADOR]O monstro se prepara para outro ataque, o que você vai fazer?")
+    escreva("****************************\n")
+    escreva("* a --> se abaixar          \n")
+    escreva("****************************\n")
+    escreva("* b --> correr pro lado    *\n")
+    escreva("****************************\n")
+    leia(escolhas[2])
+    limpa()
+    escolha(opcaoc[2])
+
+  {
+
+    caso 'a':
+
+    escreva_devagar("[NARRADOR]Você se abaixa, mas o feitiço te acerta mesmo assim. *vida  -45, sanidade -30*\n")
+    vida = vida -45
+    sanidade = sanidade - 30
+    verificacao_vida()
+
+    caso 'b': 
+
+    escreva_devagar("[NARRADOR]Você desvia consegue desviar com sucesso") 
+
+    escreva("******************************\n")
+    escreva("<digite (a) para contraatacar>\n")
+    escreva("******************************\n")
+    leia(opcaoc[2])
+    limpa()
+    escolha(opcaoc[2])
+    { 
+
+         caso 'a': 
+
+         escreva_devagar("*bigboss -100")
+         verifica_vida_boss()
+
+    }
+    escreva_devagar("[NARRADOR]Agora, a decisão que pode custar sua vida, qual escolha você vai tomar?")
+    escreva("******************************\n")
+    escreva("* 1 --> AVADAQUEDABRA        *\n")
+    escreva("******************************\n")
+    escreva("* 2 --> SECTONSEMPRA          \n")
+    escreva("******************************\n")
+    leia(escolhas[3])
+    limpa()
+    escolha(escolhas[3])
+    {
+
+        caso 1:
+
+        escreva("[VOCÊ]AVADAQUEDABRA.") 
+        bigboss = -480
+        escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
+        pare
+
+        caso 2:
+        escreva("[VOCÊ]SECTONSEMPRA!!!!!!!!\n")
+        bigboss = 10
+        verifica_vida_boss()
+
+          escreva("******************************\n")
+          escreva("* a --> INCENDIUM             \n")
+          escreva("******************************\n")
+          escreva("* b --> REDUPTO               \n")
+          escreva("******************************\n")
+          leia(opcaoc[2])
+          limpa()
+          escolha(opcaoc[2])
+          {
+             caso 'a':
+          escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
+          pare 
+             caso 'b':
+
+             escreva_devagar("[NARRADOR]Você erra a mira, Tony é possuido, outra vez... [TONY]Garoto(a) tolo(a), sorte sua que eu estou fraco, até mais"+nome+" "+sobrenome+"nos veremos em breveHAYUAHUHAUHAUHUAHUAhuah\n" )
+             escreva_devagar("*seu resultado é incerto, você não perdeu e nem ganhou, mas por enquanto é:  ")
+             //funcaofim de jogo
+
+             escreva_devagar("aos comprimentos de Walmonn e Evillyn, muito obrigada por jogar:)")
+             pare
+          
+          
+          }
+    }
+
+
+  }
+  }
+	funcao pocao_cura()
+	{
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*1-Adicione sangue de salamandra até a poção ficar vermelha.                  *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*2-Misture a poção até que se torne laranja                                   *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*3-Adicione mais sangue de salamandra                                         *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*4-Adicione um kiwi                                                           *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*5-Misture até a poção ficar verde.                                           *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*6-Adicione mais sangue de salamandra, até a poção ficar turquesa.            *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*7-Aqueça até a poção ficar azul.                                             *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*8-Adicione mais sangue de salamandra até que a poção fique rosa.             *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*9-Aqueça até a poção ficar vermelha.                                         *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*10-Adicione cinco espinhas de peixe-leão.                                    *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*11-Aqueça até a poção ficar amarela.                                         *\n")
+		escreva("*******************************************************************************\n")
+    		escreva_devagar("*12-Adicione mais cinco espinhas de peixe-leão.                               *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*12-Adicione 40 gramas de areia cintilante                                    *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*14-Adicione o muco de verme-cego até a poção ficar roxa.                     *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*15-Adicione mais muco de verme-cego.                                         *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*16-Adicione uma laranja.                                                     *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*17-Mexa até a poção ficar amarela.                                           *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*18-Aqueça até a poção ficar rosa.                                            *\n")
+		escreva("*******************************************************************************\n")
+		escreva_devagar("*19-Adicione mais sangue de salamandra até a poção ficar verde.               *\n")
+		escreva("*******************************************************************************\n")
+	}
+	funcao escreva_devagar(cadeia texto)
+	{						
+		caracter letra
+		inteiro velocidade = 100
+		inteiro j = 0
+		
+		para(inteiro i = 0 ; i < tx.numero_caracteres(texto) ; i++)
+		{
+			letra = tx.obter_caracter(texto, i)
+			se(i > 0)
+			{
+				caracter letra_menos = tx.obter_caracter(texto, i-1)
+				se(j == 149 ou letra == '[')
+				{
+					escreva("\n")
+					j = 0
+				}
+			}
+			escreva(letra)
+			j++
+			
+			escolha(letra)
+			{
+
+				caso ' ': u.aguarde(0) pare				
+				caso ',': u.aguarde(velocidade * 3) pare	
+				caso ':': u.aguarde(velocidade * 3) pare	
+				caso ';': u.aguarde(velocidade * 3) pare		
+				caso '.': u.aguarde(velocidade * 5) pare			
+				caso '!': u.aguarde(velocidade * 5) pare				
+				caso '?': u.aguarde(velocidade * 5) pare				
+				caso contrario: u.aguarde(velocidade) pare
+				
+			}
+		}
+	}
+	funcao verificacao_vida()
+	{
+		se(vida <= 0)
+		{  	
+			proximo(6000)
+			escreva_devagar("você morreu\n")
+			fim_de_jogo()
+			escreva_devagar("aos comprimentos de Walmonn e Evillyn, muito obrigada por jogar:)")
+		}
+		se(sanidade <= 10)
+		{
+			proximo(6000)
+			escreva_devagar("Você ficou louco\naos comprimentos de Walmonn e Evillyn, muito obrigada por jogar:)")
+			fim_de_jogo()
+		}
+		se(status <= 10) 
+		{
+			proximo(6000)
+			escreva_devagar("Você se tornou odiado\naos comprimentos de Walmonn e Evillyn, muito obrigada por jogar:)")
+			fim_de_jogo()
+		}
+		se(consequencia_ruim >= 120)
+		{   
+			proximo(6000)
+			escreva_devagar("Você foi expulso \naos comprimentos de Walmonn e Evillyn, muito obrigada por jogar:)")
+			fim_de_jogo()
+		}
+		se(vida == 20) 
+		{
+			se(pocao_feita >= 1)
+			{
+				escreva_devagar("*você usou a poção de cura\n*")
+				vida += 80
+			}   
+		}
+      }
+     funcao verifica_vida_boss() 
+     {
+		se(bigboss <= 10)
+		{ 
+			escreva_devagar("[NARRADOR]O monstro começa a virar a gosma verde outra vez, e agora ele está indo em dirção de Tony")
+          }
+     }
+     funcao escolha_1()
+     {
+     	escreva("*********************\n")
+		escreva("* 1 ---> exmay      *\n")
+		escreva("* 2 ---> exterminion*\n")
+		escreva("*********************\n")
+		leia(opcao[1])
+		limpa()
+		escolha(opcao[1])
+		{
+			caso 1:
+			escreva_devagar("[NITA]EXMAY![VOCÊ]EXMAY!![VOZ]COMO OUSA ME DESOBEDECER?? [NARRADOR]Uma dor toma sua cabeça, você fica palído e luta pra ficar em pé [NITA]Tá tudo bem? [VOCÊ]Não tomei café hoje, devo estar pouco tonto(a) [NITA]Certo...aqui, já consegui sangue o suficiente, vamos ir embora, você não parece bem\n")
+			sanidade = -20
+			verificacao_vida()
+			escreva_devagar("[NITA]Aqui, sua parte [VOCÊ]o..obriga..da obrigada [NITA]Por nada "+nome+" vê se passa lá na enfermaria, sua cara está horrível hahahahahah\n") 
+			pare
+			caso 2:
+			escreva_devagar("[VOCÊ]EXTERMINION!! [NITA]QUAL È O SE PROBLMA HOJE?, não precisava ter machucado eles [VOCÊ]d..desculpa, não sei o que deu em mim [NITA]Espera lá fora, não quero que machuque mais nenhum deles! [VOCÊ]Foi mal nita[NARRADOR]Nita sai da caverna irritada, no caminho pra casa vocês não trocam nenhuma palavra, quando chegam no castelo ela te da um frasco com o sangue e vai embora sem dizer uma palavra\n")
+			pare
+		}
+	}
+	funcao fim_de_jogo()
+	{
+	 	escreva("FFFFFFFFFFFFFFFFFFFFFF  iiii\n")
+		escreva("F::::::::::::::::::::F i::::i\n")
+		escreva("F::::::::::::::::::::F  iiii\n")
+		escreva("FF::::::FFFFFFFFF::::F\n")
+		escreva(" F:::::F        FFFFFF  iiiiii     mmmmmmm    mmmmmmm\n")
+		escreva(" F:::::F                i::::i   mm:::::::m  m:::::::mm\n")
+		escreva(" F::::::FFFFFFFFFF      i::::i  m::::::::::mm::::::::::m\n")
+		escreva(" F:::::::::::::::F      i::::i  m::::::::::::::::::::::m\n")
+		escreva(" F:::::::::::::::F      i::::i  m:::::mmm::::::mmm:::::m\n")
+		escreva(" F::::::FFFFFFFFFF      i::::i  m::::m   m::::m   m::::m\n")
+		escreva(" F:::::F                i::::i  m::::m   m::::m   m::::m\n")
+		escreva(" F:::::F                i::::i  m::::m   m::::m   m::::m\n")
+		escreva("FF:::::::FF            i::::::i m::::m   m::::m   m::::m\n")
+		escreva("F::::::::FF            i::::::i m::::m   m::::m   m::::m\n")
+		escreva("F::::::::FF            i::::::i m::::m   m::::m   m::::m\n")
+		escreva("FFFFFFFFFFF            iiiiiiii mmmmmm   mmmmmm   mmmmmm\n")
+		proximo(5000)
+		escreva("            dddddddd\n")
+		escreva("            d::::::d\n")
+		escreva("            d::::::d\n")
+		escreva("            d::::::d\n")
+		escreva("            d:::::d\n")
+		escreva("    ddddddddd:::::d     eeeeeeeeeeee\n")
+		escreva("  dd::::::::::::::d   ee::::::::::::ee\n")
+		escreva(" d::::::::::::::::d  e::::::eeeee:::::ee\n")
+		escreva("d:::::::ddddd:::::d e::::::e     e:::::e\n")
+		escreva("d::::::d    d:::::d e:::::::eeeee::::::e\n")
+		escreva("d:::::d     d:::::d e:::::::::::::::::e\n")
+		escreva("d:::::d     d:::::d e::::::eeeeeeeeeee\n")
+		escreva("d:::::d     d:::::d e:::::::e\n")
+		escreva("d::::::ddddd::::::dde::::::::e\n")
+		escreva(" d:::::::::::::::::d e::::::::eeeeeeee\n")
+		escreva("  d:::::::::ddd::::d  ee:::::::::::::e\n")
+		escreva("   ddddddddd   ddddd    eeeeeeeeeeeeee\n")
+		proximo(5000)
+		escreva("          JJJJJJJJJJJ\n")
+		escreva("          J:::::::::J\n")
+		escreva("          J:::::::::J\n")
+		escreva("          JJ:::::::JJ\n")
+		escreva("            J:::::J   ooooooooooo      ggggggggg   ggggg   ooooooooooo\n")
+		escreva("            J:::::J oo:::::::::::oo   g:::::::::ggg::::g oo:::::::::::oo\n")
+		escreva("            J:::::Jo:::::::::::::::o g:::::::::::::::::go:::::::::::::::o\n")
+		escreva("            J:::::jo:::::ooooo:::::og::::::ggggg::::::ggo:::::ooooo:::::o\n")
+		escreva("            J:::::Jo::::o     o::::og:::::g     g:::::g o::::o     o::::o\n")
+		escreva("JJJJJJJ     J:::::Jo::::o     o::::og:::::g     g:::::g o::::o     o::::o\n")
+		escreva("J:::::J     J:::::Jo::::o     o::::og:::::g     g:::::g o::::o     o::::o\n")
+		escreva("J::::::J   J::::::Jo::::o     o::::og::::::g    g:::::g o::::o     o::::o\n")
+		escreva("J:::::::JJJ:::::::Jo:::::ooooo:::::og:::::::ggggg:::::g o:::::ooooo:::::o\n")
+		escreva(" JJ:::::::::::::JJ o:::::::::::::::o g::::::::::::::::g o:::::::::::::::o\n")
+		escreva("   JJ:::::::::JJ    oo:::::::::::oo   gg::::::::::::::g  oo:::::::::::oo\n")
+		escreva("     JJJJJJJJJ        ooooooooooo       gggggggg::::::g    ooooooooooo\n")
+		escreva("                                                g:::::g\n")
+		escreva("                                    gggggg      g:::::g\n")
+		escreva("                                    g:::::gg   gg:::::g\n")
+		escreva("                                     g::::::ggg:::::::g\n")
+		escreva("                                      gg:::::::::::::g\n")
+		escreva("                                        ggg::::::ggg\n")
+		escreva("                                           gggggg\n")      	
+	} 
+	funcao final_incerto()
+	{
+		escreva("FFFFFFFFFFFFFFFFFFFFFF  iiii                                     lllllll\n")
+		escreva("F::::::::::::::::::::F i::::i                                    l:::::l\n")
+		escreva("F::::::::::::::::::::F  iiii                                     l:::::l\n")
+		escreva("FF::::::FFFFFFFFF::::F                                           l:::::l\n")
+		escreva("  F:::::F       FFFFFFiiiiiiinnnn  nnnnnnnn      aaaaaaaaaaaaa    l::::l\n")
+		escreva("  F:::::F             i:::::in:::nn::::::::nn    a::::::::::::a   l::::l\n")
+		escreva("  F::::::FFFFFFFFFF    i::::in::::::::::::::nn   aaaaaaaaa:::::a  l::::l\n")
+		escreva("  F:::::::::::::::F    i::::inn:::::::::::::::n           a::::a  l::::l\n")
+		escreva("  F:::::::::::::::F    i::::i  n:::::nnnn:::::n    aaaaaaa:::::a  l::::l\n")
+		escreva("  F::::::FFFFFFFFFF    i::::i  n::::n    n::::n  aa::::::::::::a  l::::l\n")
+		escreva("  F:::::F              i::::i  n::::n    n::::n a::::aaaa::::::a  l::::l\n")
+		escreva("  F:::::F              i::::i  n::::n    n::::na::::a    a:::::a  l::::l\n")
+		escreva("FF:::::::FF           i::::::i n::::n    n::::na::::a    a:::::a l::::::l\n")
+		escreva("F::::::::FF           i::::::i n::::n    n::::na:::::aaaa::::::a l::::::l\n")
+		escreva("F::::::::FF           i::::::i n::::n    n::::n a::::::::::aa:::al::::::l\n")
+		escreva("FFFFFFFFFFF           iiiiiiii nnnnnn    nnnnnn  aaaaaaaaaa  aaaallllllll\n")
+		proximo(10000)
+		escreva("IIIIIIIIII                                                                                     tttt\n")
+		escreva("I::::::::I                                                                                  ttt:::t\n")
+		escreva("I::::::::I                                                                                  t:::::t\n")
+		escreva("II::::::II                                                                                  t:::::t\n")
+		escreva("  I::::Innnn  nnnnnnnn        cccccccccccccccc    eeeeeeeeeeee    rrrrr   rrrrrrrrr   ttttttt:::::ttttttt       ooooooooooo\n")
+		escreva("  I::::In:::nn::::::::nn    cc:::::::::::::::c  ee::::::::::::ee  r::::rrr:::::::::r  t:::::::::::::::::t     oo:::::::::::oo\n")
+		escreva("  I::::In::::::::::::::nn  c:::::::::::::::::c e::::::eeeee:::::eer:::::::::::::::::r t:::::::::::::::::t    o:::::::::::::::o\n")
+		escreva("  I::::Inn:::::::::::::::nc:::::::cccccc:::::ce::::::e     e:::::err::::::rrrrr::::::rtttttt:::::::tttttt    o:::::ooooo:::::o\n")
+		escreva("  I::::I  n:::::nnnn:::::nc::::::c     ccccccce:::::::eeeee::::::e r:::::r     r:::::r      t:::::t          o::::o     o::::o\n")
+		escreva("  I::::I  n::::n    n::::nc:::::c             e:::::::::::::::::e  r:::::r     rrrrrrr      t:::::t          o::::o     o::::o\n")
+		escreva("  I::::I  n::::n    n::::nc:::::c             e::::::eeeeeeeeeee   r:::::r                  t:::::t          o::::o     o::::o\n")
+		escreva("  I::::I  n::::n    n::::nc::::::c     ccccccce:::::::e            r:::::r                  t:::::t    tttttto::::o     o::::o\n")
+		escreva("II::::::IIn::::n    n::::nc:::::::cccccc:::::ce::::::::e           r:::::r                  t::::::tttt:::::to:::::ooooo:::::o\n")
+		escreva("I::::::::In::::n    n::::n c:::::::::::::::::c e::::::::eeeeeeee   r:::::r                  tt::::::::::::::to:::::::::::::::o\n")
+		escreva("I::::::::In::::n    n::::n  cc:::::::::::::::c  ee:::::::::::::e   r:::::r                    tt:::::::::::tt oo:::::::::::oo \n")
+		escreva("IIIIIIIIIInnnnnn    nnnnnn    cccccccccccccccc    eeeeeeeeeeeeee   rrrrrrr                      ttttttttttt     ooooooooooo")
+	}
+	funcao voce_venceu()
+	{
+		escreva("VVVVVVVV           VVVVVVVV                                            ^^          \n")
+		escreva("V::::::V           V::::::V                                          ^^ ^^         \n")
+		escreva("V::::::V           V::::::V                                         ^^   ^^             \n")
+		escreva("V::::::V           V::::::V                                                      \n")
+		escreva(" V:::::V           V:::::V ooooooooooo       cccccccccccccccc    eeeeeeeeeeee    \n")
+		escreva("  V:::::V         V:::::Voo:::::::::::oo   cc:::::::::::::::c  ee::::::::::::ee  \n")
+		escreva("   V:::::V       V:::::Vo:::::::::::::::o c:::::::::::::::::c e::::::eeeee:::::ee\n")
+		escreva("    V:::::V     V:::::V o:::::ooooo:::::oc:::::::cccccc:::::ce::::::e     e:::::e\n")
+		escreva("     V:::::V   V:::::V  o::::o     o::::oc::::::c     ccccccce:::::::eeeee::::::e\n")
+		escreva("      V:::::V V:::::V   o::::o     o::::oc:::::c             e:::::::::::::::::e\n")
+		escreva("       V:::::V:::::V    o::::o     o::::oc:::::c             e::::::eeeeeeeeeee\n")
+		escreva("        V:::::::::V     o::::o     o::::oc::::::c     ccccccce:::::::e     \n")
+		escreva("         V:::::::V      o:::::ooooo:::::oc:::::::cccccc:::::ce::::::::e          \n")
+		escreva("          V:::::V       o:::::::::::::::o c:::::::::::::::::c e::::::::eeeeeeee  \n")
+		escreva("           V:::V         oo:::::::::::oo   cc:::::::::::::::c  ee:::::::::::::e  \n")
+		escreva("            VVV            ooooooooooo       cccccccccccccccc    eeeeeeeeeeeeee  \n")
+		proximo(5000)
+		escreva("VVVVVVVV           VVVVVVVV                                                                                             \n")
+		escreva("V::::::V           V::::::V                                                                                             \n")
+		escreva("V::::::V           V::::::V                                                                                             \n")
+		escreva("V::::::V           V::::::V                                                                                             \n")
+		escreva(" V:::::V           V:::::V eeeeeeeeeeee    nnnn  nnnnnnnn        cccccccccccccccc    eeeeeeeeeeee    uuuuuu    uuuuuu  \n")
+		escreva("  V:::::V         V:::::Vee::::::::::::ee  n:::nn::::::::nn    cc:::::::::::::::c  ee::::::::::::ee  u::::u    u::::u  \n")
+		escreva("   V:::::V       V:::::Ve::::::eeeee:::::een::::::::::::::nn  c:::::::::::::::::c e::::::eeeee:::::eeu::::u    u::::u  \n")
+		escreva("    V:::::V     V:::::Ve::::::e     e:::::enn:::::::::::::::nc:::::::cccccc:::::ce::::::e     e:::::eu::::u    u::::u  \n")
+		escreva("     V:::::V   V:::::V e:::::::eeeee::::::e  n:::::nnnn:::::nc::::::c     ccccccce:::::::eeeee::::::eu::::u    u::::u  \n")
+		escreva("      V:::::V V:::::V  e:::::::::::::::::e   n::::n    n::::nc:::::c             e:::::::::::::::::e u::::u    u::::u  \n")
+		escreva("       V:::::V:::::V   e::::::eeeeeeeeeee    n::::n    n::::nc:::::c             e::::::eeeeeeeeeee  u::::u    u::::u  \n")
+		escreva("        V:::::::::V    e:::::::e             n::::n    n::::nc::::::c     ccccccce:::::::e           u:::::uuuu:::::u  \n")
+		escreva("         V:::::::V     e::::::::e            n::::n    n::::nc:::::::cccccc:::::ce::::::::e          u:::::::::::::::uu\n")
+		escreva("          V:::::V       e::::::::eeeeeeee    n::::n    n::::n c:::::::::::::::::c e::::::::eeeeeeee   u:::::::::::::::u\n")
+		escreva("           V:::V         ee:::::::::::::e    n::::n    n::::n  cc:::::::::::::::c  ee:::::::::::::e    uu::::::::uu:::u\n")
+		escreva("            VVV            eeeeeeeeeeeeee    nnnnnn    nnnnnn    cccccccccccccccc    eeeeeeeeeeeeee      uuuuuuuu  uuuu\n")
+	}
+}

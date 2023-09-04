@@ -2,6 +2,7 @@ programa
 {
 	inclua biblioteca Texto --> tx 
 	inclua biblioteca Util --> u
+	inteiro fim_de_jogov = 0
 	caracter opcaoc[20]
 	cadeia nome, sobrenome ,casa
 	inteiro sanidade = 120
@@ -12,7 +13,7 @@ programa
 	inteiro carta_expulsao = 0
 	inteiro status = 180
 	inteiro consequencia_ruim = 0
-	inteiro pocao = 1
+	inteiro pocao = 0
 	inteiro pocao_feita = 0
 	inteiro lista_1[18]
 	inteiro qualquer_coisa[10]
@@ -24,9 +25,23 @@ programa
 		proximo(6000)
 		capitulo2()
 		proximo(6000)
-		dia_e()
-		proximo(6000)
-		vcfoitomado()
+		se(fim_de_jogov == 0)
+		{
+			dia_e()
+			se(fim_de_jogov == 0)
+			{
+				proximo(6000)
+				se(fim_de_jogov == 0)
+				{
+					vcfoitomado()
+					se(fim_de_jogov == 0)
+					{
+						capitulo_final()
+					}
+				}
+			}
+			
+		}
 	} //fim inicio
 	funcao capitulo1()
 	{
@@ -34,11 +49,9 @@ programa
 		leia(nome) 
 		escreva_devagar("E seu sobrenome?\n")  
 		leia(sobrenome)
-		escreva_devagar("[ALASTOR MOODY] Vamos então, "+ sobrenome+ ", não vai querer perder a Cerimônia de celeção[PASSOS][PASSOS]\n*Você caminha surpreso(a) com a velocidade do professor, que mesmo de bengala, o faz correr*\n*Você passou tanto tempo pensando nisso que quando percebeu ja estava nao refeitório*[PROFESSOR MACABRO] A CERIMÔNIA VAI COMEÇAR!!!!!!\n*Você vê uma garota indo em direção a um chapéu, e isso te causa estranhamento*\n*Um velho de barba esplica que esse é o chapéu celetor, ele analiza seus mais profundos desejos, e te manda pra casa que achar melhor*\n")
+		escreva_devagar("[ALASTOR MOODY] Vamos então, "+ sobrenome+ ", não vai querer perder a Cerimônia de seleção[PASSOS][PASSOS]\n*Você caminha surpreso(a) com a velocidade do professor, que mesmo de bengala, o faz correr*\n*Você passou tanto tempo pensando nisso que quando percebeu ja estava nao refeitório*[PROFESSOR MACABRO] A CERIMÔNIA VAI COMEÇAR!!!!!!\n*Você vê uma garota indo em direção a um chapéu, e isso te causa estranhamento*\n*Um velho de barba esplica que esse é o chapéu celetor, ele analiza seus mais profundos desejos, e te manda pra casa que achar melhor*\n")
 		proximo(6000)
-		escreva_devagar("[CHAPÉU SELETOR] Grfinória!!![GAROTO] Já é a vigésima vez que cai grifinória, parece que eles deram sorte com os calouros esse ano, *Um garoto fala ao seu lado*[TONY] Aliás, prazer, me chamo Tony, *Ele diz*[TONY] Qual é, você não fala?[VOCÊ] Ah, desculpe, estava esperando ser chamad@ pra seleção de casas mas ainda não fui\n")
-		escreva_devagar("[VOCÊ]Me chamo "+nome+ ".") 
-		escreva_devagar("[TONY]Prazer "+nome+ ".")
+		escreva_devagar("[CHAPÉU SELETOR] Grifinória!!![GAROTO] Já é a vigésima vez que cai grifinória, parece que eles deram sorte com os calouros esse ano, *Um garoto fala ao seu lado*[TONY] Aliás, prazer, me chamo Tony.[TONY] Qual é, você não fala?[VOCÊ] Ah, desculpe, estava esperando ser chamad@ pra seleção de casas mas ainda não fui[VOCÊ]Me chamo "+nome+ ".[TONY]Prazer "+nome+ ".")
 		proximo(6000)
 		escreva_devagar("[CARINHA QUE TA LENDO OS NOMES] Agh, como se pronúncia esse nome,"+ nome+ " venha para seleção!!![NARRADOR] Você pode tirar uma das 4 casas, são elas , Grifinória, Corvinal, Lufa-Lufa ou Sonserina, boa sorte!\n") 
 		casa_sorteada()
@@ -133,7 +146,7 @@ programa
 		escreva("                                         p:::::::p                                                    \n")
 		escreva("                                         ppppppppp                                                    \n")
 		proximo(3000)
-		escreva_devagar("[NARRADOR] às 09h da manhã você desce com o Tony pro café, e depois vai para a aula de poções.\n")
+		escreva_devagar("[NARRADOR] Às 09h da manhã você desce com o Tony pro café, e depois vai para a aula de poções.\n")
 		escreva_devagar("Você prestou atenção na aula?\n\n")
 		escreva("**************\n")
 		escreva("* 1 --> Sim  *\n")
@@ -148,12 +161,11 @@ programa
 			escreva_devagar("O professor Sina passa entregando um pergaminho.[PROFESSOR SINA] Wiggenweld foi um estudioso do século XIX que queria saber curar uma pessoa sem medicina trouxa, e sem varinha\nSiga a receita a baixo e vão conseguir fazer a poção com sucesso.\n\n")
 			pocao_cura()
               	u.aguarde(10000)
-               pocao = +1
+               pocao += 1
 			escreva_devagar("[NARRADOR]A aula acaba e você vai para a sala comunal e encontra Tony lá[TONY]Oi, tava mesmo esperando você!!"+"[VOCÊ]O que foi?"+"[TONY]Quer dar uma volta?"+"[VOCÊ]Já passam das seis, não podemos sair daqui"+"[TONY]É só não sermos pegos, qual é cara? desde quando você segue as regras?"+"[Tá legal, vamos]")
 			pare
 			caso 2:
-			escreva_devagar(nome+" *Todos se assustam e olham para o jogador, que com o grito, acordo*.\n")
-			escreva_devagar("Se minha aula é tão entediante assim para dormir, saia, você está espulso da matéria de poções\n\n")
+			escreva_devagar(nome+" *Todos se assustam e olham para o jogador, que com o grito, acordo*.\n Se minha aula é tão entediante assim para dormir, saia, você está espulso da matéria de poções\n\n")
 			proximo(5000)
 			escreva_devagar("               Carta de Espulsão\n"			)
 			escreva_devagar("        Venho informar que por meio deste o aluno\n "	)
@@ -165,24 +177,26 @@ programa
 			escreva_devagar("              os cumprimentos do PROFESSOR SINA\n"		)
 			carta_expulsao += 1
 			proximo(10000)
-			escreva_devagar("Todos olham pro aluno e ele não entende pq tanto espanto sendo que eram só poções,\n mas para se formar você precisa de poções, e agora que está expulso da matéria só vai conseguir aprender com os livros e de formas\n ilegais.")
-			consequencia_ruim = +30
+			escreva_devagar("Todos olham pro aluno e ele não entende pq tanto espanto sendo que eram só poções, mas para se formar você precisa de poções, e agora que está expulso da matéria só vai conseguir aprender com os livros e de formas ilegais.")
+			consequencia_ruim += 30
 			proximo(5000)
-			escreva_devagar("[NARRADOR]O jogador segue para a casa comunal "+casa+" e encontra Tony, e lá eles tem o seguinte diálogo[TONY]eai cara, tudo bem?[VOCÊ]Na real? Não, acabei de ser expulso da materia de poções[TONY]Agh, que droga cara[NARRADOR]Tony anda de um lado pro outro, parecendo ter uma ideia"+"[TONY] Vamos dar uma volta para te animar"+"[VOCÊ]Nâo posso sair daqui cara"+"[TONY]Desde quando você segue as regras??"+ "[VOCÊ]Tá bom, vamos")
+			escreva_devagar("[NARRADOR]O jogador segue para a casa comunal "+casa+" e encontra Tony, e lá eles tem o seguinte diálogo[TONY]eai cara, tudo bem?[VOCÊ]Na real? Não, acabei de ser expulso da materia de poções[TONY]Agh, que droga cara[NARRADOR]Tony anda de um lado pro outro, parecendo ter uma ideia [TONY] Vamos dar uma volta para te animar [VOCÊ]Nâo posso sair daqui cara [TONY]Desde quando você segue as regras??[VOCÊ]Tá bom, vamos")
+			pare
 			caso contrario:
 			escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
 			limpa()
 			fim_de_jogo()
+			pare
 		}
 	}
 	funcao dia_e()
 	{
-		escreva_devagar("[NARRADOR]Vocês chegam em um morrinho, no topo dele tem uma pequena cabana, e você se surpreende por nunca ter visto ela antes [VOCÊ]Como eu nunca vi essa casa antes?[TONY]relaxa aí cabeção, você só está vendo porquê eu quero que veja [NARRADOR]Vocês entram na cabana, e ela é maior por dentro, tipo, muito maior, mesmo depois de tanto tempo no mundo dos bruxos, você ainda não entende como isso é possível [TONY]Legal né?, eu mesmo que encantei, quando meu pai ainda era vivo, ele me ensinou tudo sobre magia, agora só preciso do certificado para transformar esse meu conhecimento em algo legal, já que ele é considerado clandestino [NARRADOR] Tony mistura algumas coisas em um caldeirão, depois disso uma fumaça roxa sobre, e Tony conjura um feitiço que a transforma em um pequeno cristal [TONY] Vamos, meu cliente deve estar esperando [NARRADOR]Você para quando escuta isso [VOCÊ]Qual é Tony, contrabando é ilegal e você sabe bem disso [TONY]óbvio que eu sei, mas diferente de você, não nasci herdeiro, e preciso pagar minhas próprias contas [NARRADOR]O tom de Tony pareceu um pouco magoado, então você resolveu o deixar em paz  [NARRADOR]Quando vocês chegam em uma clareira um homem surge das sombras, com um sorriso perverso ele encara Tony e parece muito animado quando Tony joga o cristal na grama molhada [TONY]Agora me pague como combinamos\n"+"[NARRADOR] O homem faz uma cara feia e joga o um saco de moedas pra Tony, que da as costas assim que o pega, e te chama para ir embora/n"+"[NARRADOR]O homem desaparece e você segue Tony, mas antes de voltarem para a trilha, você ~e um pergaminho no chão, e se abaixa rapidamente para apanha-lo, colocando rapidamente em seu bolso"+"[NARRADOR]Quando vocês chegam na cabana, Tony se despede e diz que vai passar a noite nela, e você segue para seu quarto ansioso para descobrir o que contém no pergaminho[NARRADOR]você chega no seu quarto e corre para a escrivaninha [NARRADOR]Ao abrir o pergaminho, a única coisa que você pode observar é um pequena gota de tinta, e quando você passa o dedo, dobre ela, a tormenta começa [NARRADOR]A tinta entra em seu dedo, percorrendo suas veias numa dor agoniante, e junto dessa dor uma voz surge[VOZ]GAroto(a) tolo(a) AHHAAHAUHAUHUAHUHAUAHUAH, muiiito toloooooooo [NARRADOR]você cai da cadeira e se coloca de joelhos, encostando a cabeça no chão, a fim de diminuir a dor"+"[PASSOS] [PASSOS]\n [HERNANDEZ]Cara...tá tudo bem? [VOZ]RESPONDA ELE RESPONDA ELE AGORAAAAAAAAAAAAAAA\n [VOCÊ]tá...eu...eu...sou..agh...sonâmbulo [HERNANDES]Tá certo...boa noite então[VOZ]Vai dormir garoto, amanhã você vai sofrer [VOCÊ] O que você quer comigo, me deixa em paz por fav- [VOZ]EU DISSE PRA IR DORMIR, GAROTO(A) INSOLENTE [NARRADOR]A dor fez você desmaiar e acordar no outro dia, sua mão estava latejando [VOZ]Você não passa de um peão agora, eu te controlo, você não tem mais vontades [VOZ]Coloque uma roupa que cubra seus braços, as pessoas podem notar a maldição[NARRADOR] E assim você fez [VOZ] Sua missão é fazer uma poção de cura, e tomar, vou te deixar em paz, mas saiba que eu escuto tudo, e vou tomar o controle quando eu quiser\n")
-		sanidade = -5
+		escreva_devagar("[NARRADOR]Vocês chegam em um morrinho, no topo dele tem uma pequena cabana, e você se surpreende por nunca ter visto ela antes [VOCÊ]Como eu nunca vi essa casa antes?[TONY]relaxa aí cabeção, você só está vendo porquê eu quero que veja [NARRADOR]Vocês entram na cabana, e ela é maior por dentro, tipo, muito maior, mesmo depois de tanto tempo no mundo dos bruxos, você ainda não entende como isso é possível [TONY]Legal né?, eu mesmo que encantei, quando meu pai ainda era vivo, ele me ensinou tudo sobre magia, agora só preciso do certificado para transformar esse meu conhecimento em algo legal, já que ele é considerado clandestino [NARRADOR] Tony mistura algumas coisas em um caldeirão, depois disso uma fumaça roxa sobre, e Tony conjura um feitiço que a transforma em um pequeno cristal [TONY] Vamos, meu cliente deve estar esperando [NARRADOR]Você para quando escuta isso [VOCÊ]Qual é Tony, contrabando é ilegal e você sabe bem disso [TONY]óbvio que eu sei, mas diferente de você, não nasci herdeiro, e preciso pagar minhas próprias contas [NARRADOR]O tom de Tony pareceu um pouco magoado, então você resolveu o deixar em paz  [NARRADOR]Quando vocês chegam em uma clareira um homem surge das sombras, com um sorriso perverso ele encara Tony e parece muito animado quando Tony joga o cristal na grama molhada [TONY]Agora me pague como combinamo [NARRADOR] O homem faz uma cara feia e joga o um saco de moedas pra Tony, que da as costas assim que o pega, e te chama para ir embora"+"[NARRADOR]O homem desaparece e você segue Tony, mas antes de voltarem para a trilha, você ~e um pergaminho no chão, e se abaixa rapidamente para apanha-lo, colocando rapidamente em seu bolso"+"[NARRADOR]Quando vocês chegam na cabana, Tony se despede e diz que vai passar a noite nela, e você segue para seu quarto ansioso para descobrir o que contém no pergaminho[NARRADOR]você chega no seu quarto e corre para a escrivaninha [NARRADOR]Ao abrir o pergaminho, a única coisa que você pode observar é um pequena gota de tinta, e quando você passa o dedo, dobre ela, a tormenta começa [NARRADOR]A tinta entra em seu dedo, percorrendo suas veias numa dor agoniante, e junto dessa dor uma voz surge[VOZ]GAroto(a) tolo(a) AHHAAHAUHAUHUAHUHAUAHUAH, muiiito toloooooooo [NARRADOR]você cai da cadeira e se coloca de joelhos, encostando a cabeça no chão, a fim de diminuir a dor"+"[PASSOS] [PASSOS] [HERNANDEZ]Cara...tá tudo bem? [VOZ]RESPONDA ELE RESPONDA ELE AGORAAAAAAAAAAAAAAA [VOCÊ]tá...eu...eu...sou..agh...sonâmbulo [HERNANDES]Tá certo...boa noite então[VOZ]Vai dormir garoto, amanhã você vai sofrer [VOCÊ] O que você quer comigo, me deixa em paz por fav- [VOZ]EU DISSE PRA IR DORMIR, GAROTO(A) INSOLENTE [NARRADOR]A dor fez você desmaiar e acordar no outro dia, sua mão estava latejando [VOZ]Você não passa de um peão agora, eu te controlo, você não tem mais vontades [VOZ]Coloque uma roupa que cubra seus braços, as pessoas podem notar a maldição[NARRADOR] E assim você fez [VOZ] Sua missão é fazer uma poção de cura, e tomar, vou te deixar em paz, mas saiba que eu escuto tudo, e vou tomar o controle quando eu quiser\n")
+		sanidade -= 5
 		verificacao_vida()
-		se(pocao == 2 )
+		se(pocao == 1 )
 		{
-			escreva_devagar("[VOCÊ]Só preciso dos intens que estão na lista, vamos lá")
+			escreva_devagar("[VOCÊ]Só preciso dos intens que estão na lista, vamos lá \n")
 			pocao_cura()   
 			escreva_devagar("*************************\n")
 			escreva_devagar("* 1 --> Falar com Nita **\n")
@@ -193,8 +207,7 @@ programa
 			escolha(opcao[1])
 			{
 				caso 1:
-				escreva_devagar("[VOCÊ]Oi nita, tudo bem?[NITA]Oi"+nome+"Estou bem, mas você não parece estar[VOCÊ]Relaxa...é só um resfriado, enfim, sabe onde posso arrajar um pouco de sangue de salamandra? [NITA]Estava indo estrair um pouco agora mesmo, quer ir? é meio puxado mas não demora muito não [VOCÊ]Se não for muito incomodo [NITA]Não é incomodo nenhum, na verdade é bom ter um ajudante [NARRADOR]Vocês andam numa trilha por meia hora até das de cara com uma caverna, lá você pode ver ovos brilhantes e criaturas magicas [NITA]Apanhe sua varinha, vamos precisar dela pra passar [VOCÊ]Qual feitiço eu devo usar? [NITA]Exmay, vai espantar eles, mas não vai machuca-los [VOZ]Use exterminion, quero que os mate\n")
-				leia(escolhas[0])
+				escreva_devagar("[VOCÊ]Oi nita, tudo bem?[NITA]Oi "+nome+" estou bem, mas você não parece estar...[VOCÊ]Relaxa...é só um resfriado, enfim, sabe onde posso arranjar um pouco de sangue de salamandra? [NITA]Estava indo extrair um pouco agora mesmo, quer ir? É meio puxado mas não demora muito não [VOCÊ]Se não for muito incomodo [NITA]Não é incomodo nenhum, na verdade é bom ter um ajudante [NARRADOR]Vocês andam numa trilha por meia hora até das de cara com uma caverna, lá você pode ver ovos brilhantes e criaturas magicas [NITA]Apanhe sua varinha, vamos precisar dela pra passar [VOCÊ]Qual feitiço eu devo usar? [NITA]Exmay, vai espantar eles, mas não vai machuca-los [VOZ]Use exterminion, quero que os mate\n")
 				escreva("*********************\n")
                     escreva("* 1 ---> exmay      *\n")
                     escreva("* 2 ---> exterminion*\n")
@@ -204,42 +217,43 @@ programa
                     escolha(opcao[1])
                     {
                     	caso 1:
-                    	escreva_devagar("[NITA]EXMAY!\n [VOCÊ]EXMAY!!\n")
-                    	escreva_devagar("[VOZ]COMO OUSA ME DESOBEDECER?? [NARRADOR]Uma dor toma sua cabeça, você fica palído e luta pra ficar em pé [NITA]Tá tudo bem? [VOCÊ]Não tomei café hoje, devo estar pouco tonto(a) [NITA]Certo...aqui, já consegui sangue o suficiente, vamos ir embora, você não parece bem\n")
-                    	sanidade = -20
+                    	escreva_devagar("[NITA]EXMAY! [VOCÊ]EXMAY!! [VOZ]COMO OUSA ME DESOBEDECER?? [NARRADOR]Uma dor toma sua cabeça, você fica palído e luta pra ficar em pé [NITA]Tá tudo bem? [VOCÊ]Não tomei café hoje, devo estar pouco tonto(a) [NITA]Certo...aqui, já consegui sangue o suficiente, vamos ir embora, você não parece bem\n")
+                    	sanidade -= 20
                     	verificacao_vida()
-                    	escreva_devagar("[NITA]Aqui, sua parte [VOCÊ]o..obriga..da obrigada [NITA]Por nada "+nome+" vê se passa lá na enfermaria, sua cara está horrível hahahahahah\n") 
+                    	escreva_devagar("[NITA]Aqui, sua parte [VOCÊ]o..obrigada [NITA]Por nada "+nome+" vê se passa lá na enfermaria, sua cara está horrível hahahahahah\n") 
                     	pare
                     	caso 2:
-					escreva_devagar("[VOCÊ]EXTERMINION!!\n [NITA]QUAL È O SE PROBLMA HOJE?, não precisava ter machucado eles\n [VOCÊ]d..desculpa, não sei o que deu em mim [NITA]Espera lá fora, não quero que machuque mais nenhum deles! [VOCÊ]Foi mal nita\n")
-					escreva_devagar("[NARRADOR]Nita sai da caverna irritada, no caminho pra casa vocês não trocam nenhuma palavra, quando chegam no castelo ela te da um frasco com o sangue e vai embora sem dizer uma palavra\n")
-					status = -20
+					escreva_devagar("[VOCÊ]EXTERMINION!! [NITA]QUAL È O SE PROBLMA HOJE?, não precisava ter machucado ele [VOCÊ]d..desculpa, não sei o que deu em mim [NITA]Espera lá fora, não quero que machuque mais nenhum deles! [VOCÊ]Foi mal Nita[NARRADOR]Nita sai da caverna irritada, no caminho pra casa vocês não trocam nenhuma palavra, quando chegam no castelo ela te da um frasco com o sangue e vai embora sem dizer uma palavra\n")
+					status -= 20
 					escreva("***************************\n")
 					escreva("-<digite 1 para ir embora>-\n")
 					escreva("***************************\n")
 					leia(qualquer_coisa[0])
 					limpa()
+					pare
 			          caso contrario:
-					escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+					escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo novamente")
 					limpa()
 					fim_de_jogo()
+					pare
                    	}
 				caso 2:
-				escreva_devagar("[VOCÊ]Oi Lian, sabe onde posso conseguir um pouco de sanque de salamandra? [LIAM]Posso te arranjar, mas em troca quero algo de você\n [VOCÊ]O que extamente? [LIAM]Quero que coloque laxante na bebida do professor sina\n")
+				escreva_devagar("[VOCÊ]Oi Lian, sabe onde posso conseguir um pouco de sanque de salamandra? [LIAM]Posso te arranjar, mas em troca quero algo de você [VOCÊ]O que extamente? [LIAM]Quero que coloque laxante na bebida do professor Sina\n")
                    	se(carta_expulsao == 1)
                    	{
-                    	escreva_devagar("[NARRADOR]A ideia de colocar um laxante na bebida do professor que te expulsou da aula é bem animadora\n [VOCÊ]Tô dentro!")
+                    	escreva_devagar("[NARRADOR]A ideia de colocar um laxante na bebida do professor que te expulsou da aula é bem animadora [VOCÊ]Tô dentro!")
                    	}
                     senao
                    	{
                       	escreva_devagar("[VOCÊ]Agh, pode ser então")
                   	}
-                   	escreva_devagar("[NARRADOR] Vocês vão para a sala dos professores, com a desculpa de ter que fazer um recuperação de nota com o professor Sina [LIAN] O plano é o seguinte, eu chamo ele para conversar sobre minha nota, e você aproveite que ele vai estar distraído e despeje o flur de estomago no suco de abobora que ele toma toda manhã [NARRADOR] Vocês vão para a sala dos professores, com a desculpa de ter que fazer um recuperação de nota com o professor Sina [LIAN] O plano é o seguinte, eu chamo ele para conversar sobre minha nota, e você aproveite que ele vai estar distraído e despeje o flur de estomago no suco de abobora que ele toma toda manhã [VOCÊ]Ok, entendido [NARRADOR]E assim é feito, Lian fala com o professor e você coloca o fluor na bebida dele [NARRADOR]Assim que você termina de despejar você faz um sinal para avisar Lian[NARRADOR]Você faazo sinal que combinou com Lian [NARRADOR]Lian percebe o sinal e encerra a conversa com o professor sina [NARRADOR]Vocês observam pelo lado de fora, de lá vocês conseguem ver o professor bebiricando o suco [NARRADOR]*já na sala comunal da"+casa+"* [LIAN]Aqui, o sangue de salamandra que você pediu [NARRADOR]Você pegaosangue que precisava e agradece [VOCê]Obrigado/n")
+                   	escreva_devagar("[LIAN] O plano é o seguinte, eu chamo ele para conversar sobre minha nota, e você aproveite que ele vai estar distraído e despeje o flur de estomago no suco de abobora que ele toma toda manhã [NARRADOR]E assim é feito, Lian fala com o professor e você coloca o fluor na bebida dele [NARRADOR]Assim que você termina de despejar você faz um sinal para avisar Lian[NARRADOR]Lian percebe o sinal e encerra a conversa com o professor Sina [NARRADOR]Vocês observam pelo lado de fora, de lá vocês conseguem ver o professor bebiricando o suco [NARRADOR]*já na sala comunal da "+casa+"* [LIAN]Aqui, o sangue de salamandra que você pediu [NARRADOR]Você pega o sangue que precisava e agradece [VOCê]Obrigado/n")
                	pare
                 	caso contrario:
 				escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
 				limpa()
 				fim_de_jogo()
+				pare
                }
           }
           senao
@@ -249,13 +263,13 @@ programa
 	}
   	funcao vcfoitomado()              
 	{ 
-	    escreva_devagar("[NARRADOR]Você segue o resto do dia normalmente, a voz não volta em nenhum momento, e você até acha que se livrou dela [NARRADOR]Deu a hora de dormir, no jantar você mal tocou na comida, e se sentiu enjoado o tempo todo, além de suas mãos e braços latejando, e suas veias escurecendo [VOZ]Que droga, garoto(a)! Se continuar assim vai morrer antes de terminar a poção de cura, TE PEDI ALGO SIMPLES e em um dia você conseguiu apenas um dos intens da lista, garoto(a) inútil [NARRADOR]A voz ecoa em sua mente, você se deixa levar e desmaia mais uma vez")
-	      dois_dias_depois()
+	    escreva_devagar("[NARRADOR]Você segue o resto do dia normalmente, a voz não volta em nenhum momento, e você até acha que se livrou dela [NARRADOR]Deu a hora de dormir, no jantar você mal tocou na comida, e se sentiu enjoado o tempo todo, além de suas mãos e braços latejando, e suas veias escurecendo [VOZ]Que droga, garoto(a)! Se continuar assim vai morrer antes de terminar a poção de cura, TE PEDI ALGO SIMPLES e em um dia você conseguiu apenas um dos itens da lista, garoto(a) inútil [NARRADOR]A voz ecoa em sua mente, você se deixa levar e desmaia mais uma vez")
+	    dois_dias_depois()
 	    escreva_devagar("[VOCÊ](asma) O que.. o que(asma)... o que aconteceu....(asma) [NARRADOR]Você está confuso, mas segue Tony assim mesmo [NARRADOR]Vocês seguem para a clareira, a mesma que estiveram naquele dia, noites atrás\n")
 	}
- 	 funcao capitulofinal() 
+ 	 funcao capitulo_final() 
  	 { 
-		escreva_devagar("[NARRADOR]Vocês chegam na clareira, e um sentimento esquisito toma conta de seu peito...Tony, ele está quieto demais e isso não énormal para o tony [VOCÊ]Tony! chega de silêncio, o que tá acontecendo? o que você tem??? [NARRADOR]Tony para no meio da clareira e observa você de longe, ele abre um sorriso perverso no rosto, que começa a se desfigurar [NARRADOR]Uma gosma verde começa a sair da boca de Tony, e seus olhos se reviram até a parte branca deles [VOCÊ]TONY, QUE MERDA É ESSA CAARA [TONY]Você realmente achou que esse garoto conseguiu te salvar sozinho? Acha mesmo que ele tm esse poder? [NARRADOR]A gosma começa a ter forma de um homem de 2 metros muito forte [VOCÊ]Deixe ele em paz, você já tem a mim !!! [TONY]Você não está entendendo, garoto tolo, a culpa de Tony estar assim é sua, quando você me deixou assumir o comando, seu corpo de verme fraco não aguentou, só precisei derrubar algumas lagrimas para Tony sentir pena, e então ele fez [VOCÊ]fez o que??? [TONY]Ele me transferiu para o próprio corpo, mas ele é bem mais forte que você, então assumi o controle mais rápido [TONY]E ele fez tudo pra que? pra salvar um sangue ruim como você? eu te achava tolo, mas esse Tony se superou [NARRADOR]Assim que o corpo de gosma verde se completa o de Tony caí no chão, você sente medo, talvez seu amigo tenha morrido, tenha morrido por sua causa.*<__BATALHA FINAL INICIADA__>* [VOCÊ]DEIXA ELE EEM PAZ\n")
+		escreva_devagar("[NARRADOR]Vocês chegam na clareira, e um sentimento esquisito toma conta de seu peito...Tony, ele está quieto demais e isso não é normal para o Tony [VOCÊ]Tony! chega de silêncio, o que tá acontecendo? o que você tem??? [NARRADOR]Tony para no meio da clareira e observa você de longe, ele abre um sorriso perverso no rosto, que começa a se desfigurar [NARRADOR]Uma gosma verde começa a sair da boca de Tony, e seus olhos se reviram até a parte branca deles [VOCÊ]TONY, QUE MERDA É ESSA CAARA [TONY]Você realmente achou que esse garoto conseguiu te salvar sozinho? Acha mesmo que ele tm esse poder? [NARRADOR]A gosma começa a ter forma de um homem de 2 metros muito forte [VOCÊ]Deixe ele em paz, você já tem a mim !!! [TONY]Você não está entendendo, garoto tolo, a culpa de Tony estar assim é sua, quando você me deixou assumir o comando, seu corpo de verme fraco não aguentou, só precisei derrubar algumas lagrimas para Tony sentir pena, e então ele fez [VOCÊ]fez o que??? [TONY]Ele me transferiu para o próprio corpo, mas ele é bem mais forte que você, então assumi o controle mais rápido [TONY]E ele fez tudo pra que? pra salvar um sangue ruim como você? eu te achava tolo, mas esse Tony se superou [NARRADOR]Assim que o corpo de gosma verde se completa o de Tony caí no chão, você sente medo, talvez seu amigo tenha morrido, tenha morrido por sua causa.*<__BATALHA FINAL INICIADA__>* [VOCÊ]DEIXA ELE EEM PAZ\n")
 		proximo(6000)
 		escreva("**************************\n")
 		escreva("* 1 --> Petrificustotales \n")
@@ -264,7 +278,7 @@ programa
 		escreva("**************************\n")
 		leia(escolhas[1])
 		limpa()
-		escolha(opcao[15])
+		escolha(escolhas[1])
 		{
 			caso 1: 
 			escreva("[VOCÊ]PETRIFICUS TOTALES!\n")
@@ -280,89 +294,97 @@ programa
 			limpa()
 			fim_de_jogo()	      
 		}
-
-		escreva_devagar("[NARRADOR]O monstro se prepara para outro ataque, o que você vai fazer?")
-		escreva("****************************\n")
-		escreva("* a --> se abaixar          \n")
-		escreva("****************************\n")
-		escreva("* b --> correr pro lado    *\n")
-		escreva("****************************\n")
-		leia(escolhas[2])
-		limpa()
-		escolha(opcaoc[2])
+		se(fim_de_jogov == 0)
 		{
-			caso 'a':
-			escreva_devagar("[NARRADOR]Você se abaixa, mas o feitiço te acerta mesmo assim. *vida  -45, sanidade -30*\n")
-			vida = vida -45
-			sanidade = sanidade - 30
-			verificacao_vida()
-
-    			caso 'b': 
-			escreva_devagar("[NARRADOR]Você desvia consegue desviar com sucesso") 
-			escreva("******************************\n")
-			escreva("<digite (a) para contraatacar>\n")
-			escreva("******************************\n")
-			leia(opcaoc[2])
+			escreva_devagar("[NARRADOR]O monstro se prepara para outro ataque, o que você vai fazer?")
+			escreva("****************************\n")
+			escreva("* a --> se abaixar          \n")
+			escreva("****************************\n")
+			escreva("* b --> correr pro lado    *\n")
+			escreva("****************************\n")
+			leia(escolhas[2])
 			limpa()
 			escolha(opcaoc[2])
-			{ 
-				caso 'a': 
-				escreva_devagar("*bigboss -100")
-				verifica_vida_boss()
-				caso contrario:
-				escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+			{
+				caso 'a':
+				escreva_devagar("[NARRADOR]Você se abaixa, mas o feitiço te acerta mesmo assim. *vida  -45, sanidade -30*\n")
+				vida = vida -45
+				sanidade = sanidade - 30
+				verificacao_vida()	
+ 	   			caso 'b': 
+				escreva_devagar("[NARRADOR]Você desvia consegue desviar com sucesso") 
+				escreva("******************************\n")
+				escreva("<digite (a) para contraatacar>\n")
+				escreva("******************************\n")
+				leia(opcaoc[2])
 				limpa()
-				fim_de_jogo()
-
-    			}
-   			escreva_devagar("[NARRADOR]Agora, a decisão que pode custar sua vida, qual escolha você vai tomar?")
-   			escreva("******************************\n")
-   			escreva("* 1 --> AVADAQUEDABRA        *\n")
-   			escreva("******************************\n")
-   			escreva("* 2 --> SECTONSEMPRA          \n")
-   			escreva("******************************\n")
-   			leia(escolhas[3])
-    			limpa()
-    			escolha(escolhas[3])
-    			{
-				caso 1:
-				escreva("[VOCÊ]AVADAQUEDABRA.") 
-				bigboss = -480
-				escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
-				pare
-				caso 2:
-				escreva("[VOCÊ]SECTONSEMPRA!!!!!!!!\n")
-				bigboss = 10
-				verifica_vida_boss()
-		          escreva("******************************\n")
-		          escreva("* a --> INCENDIUM             \n")
-     		     escreva("******************************\n")
-    			     escreva("* b --> REDUPTO               \n")
-		          escreva("******************************\n")
-          leia(opcaoc[2])
-          limpa()
-          escolha(opcaoc[2])
-          {
-             	caso 'a':
-          	escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
-          	pare 
-             	caso 'b':
-             	escreva_devagar("[NARRADOR]Você erra a mira, Tony é possuido, outra vez... [TONY]Garoto(a) tolo(a), sorte sua que eu estou fraco, até mais"+nome+" "+sobrenome+"nos veremos em breveHAYUAHUHAUHAUHUAHUAhuah\n" )
-             	escreva_devagar("*seu resultado é incerto, você não perdeu e nem ganhou, mas por enquanto é:  ")
-             	fim_de_jogo()
-             	escreva_devagar("aos comprimentos de Walmonn e Evillyn, muito obrigada por jogar:)")
-             	pare
-             	caso contrario:
-			escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
-			limpa()
-			fim_de_jogo()
+				escolha(opcaoc[2])
+				{ 
+					caso 'a': 
+					escreva_devagar("*bigboss -100")
+					verifica_vida_boss()
+					pare
+					caso contrario:
+					escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+					limpa()
+					fim_de_jogo()
+					pare	
+ 	   			}
+ 	   			se(fim_de_jogov == 0)
+ 	   			{
+   					escreva_devagar("[NARRADOR]Agora, a decisão que pode custar sua vida, qual escolha você vai tomar?")
+   					escreva("******************************\n")
+   					escreva("* 1 --> AVADAQUEDABRA        *\n")
+   					escreva("******************************\n")
+   					escreva("* 2 --> SECTONSEMPRA          \n")
+   					escreva("******************************\n")
+   					leia(escolhas[3])
+   	 				limpa()
+   	 				escolha(escolhas[3])
+   	 				{
+						caso 1:
+						escreva("[VOCÊ]AVADAQUEDABRA.") 
+						bigboss = -480
+						escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
+						pare
+						caso 2:
+						escreva("[VOCÊ]SECTONSEMPRA!!!!!!!!\n")
+						bigboss = 10
+						verifica_vida_boss()
+			         		escreva("******************************\n")
+			          	escreva("* a --> INCENDIUM             \n")
+     			     	escreva("******************************\n")
+    				     	escreva("* b --> REDUPTO               \n")
+			          	escreva("******************************\n")
+     	   		 		leia(opcaoc[2])
+     	     			limpa()
+     		     		escolha(opcaoc[2])
+         		 			{
+             					caso 'a':
+          					escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
+          					pare 
+             					caso 'b':
+             					escreva_devagar("[NARRADOR]Você erra a mira, Tony é possuido, outra vez... [TONY]Garoto(a) tolo(a), sorte sua que eu estou fraco, até mais"+nome+" "+sobrenome+"nos veremos em breveHAYUAHUHAUHAUHUAHUAhuah\n" )
+             					escreva_devagar("*seu resultado é incerto, você não perdeu e nem ganhou, mas por enquanto é:  ")
+             					fim_de_jogo()
+             					escreva_devagar("aos comprimentos de Walmonn e Evillyn, muito obrigada por jogar:)")
+             					pare
+             					caso contrario:
+							escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+							limpa()
+							fim_de_jogo()
 			
-          }
-    }
-
-
-  }
-  }
+          				}
+          				pare
+          				caso contrario:
+						escreva_devagar("A vida é feita de escolhas. Devido vc ter escolhido não usar os valores que devia não vamos retornar para que vc corrija seus erros assim como na vida vc não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo do início novamente")
+						limpa()
+						fim_de_jogo()
+    					}
+				}
+			}
+  		}
+ 	}
 	funcao pocao_cura()
 	{
 		escreva("*******************************************************************************\n")
@@ -420,6 +442,10 @@ programa
 				se(j == 149 ou letra == '[')
 				{
 					escreva("\n")
+					j = 0 
+				}
+				se(letra_menos == '\\' e letra == 'n')
+				{
 					j = 0
 				}
 			}
@@ -496,7 +522,7 @@ programa
 		{
 			caso 1:
 			escreva_devagar("[NITA]EXMAY![VOCÊ]EXMAY!![VOZ]COMO OUSA ME DESOBEDECER?? [NARRADOR]Uma dor toma sua cabeça, você fica palído e luta pra ficar em pé [NITA]Tá tudo bem? [VOCÊ]Não tomei café hoje, devo estar pouco tonto(a) [NITA]Certo...aqui, já consegui sangue o suficiente, vamos ir embora, você não parece bem\n")
-			sanidade = -20
+			sanidade -= 20
 			verificacao_vida()
 			escreva_devagar("[NITA]Aqui, sua parte [VOCÊ]o..obriga..da obrigada [NITA]Por nada "+nome+" vê se passa lá na enfermaria, sua cara está horrível hahahahahah\n") 
 			pare
@@ -628,7 +654,8 @@ programa
 		escreva("                                     g::::::ggg:::::::g\n")
 		escreva("                                      gg:::::::::::::g\n")
 		escreva("                                        ggg::::::ggg\n")
-		escreva("                                           gggggg\n")      	
+		escreva("                                           gggggg\n")
+		fim_de_jogov ++   	
 	} 
 	funcao final_incerto()
 	{

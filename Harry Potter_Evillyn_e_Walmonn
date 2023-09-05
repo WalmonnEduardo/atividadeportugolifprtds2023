@@ -167,7 +167,7 @@ programa
 			pocao_cura()
               	u.aguarde(10000)
                pocao += 1
-			escreva_devagar("[NARRADOR]A aula acaba e você vai para a sala comunal e encontra Tony lá[TONY]Oi, tava mesmo esperando você!!"+"[VOCÊ]O que foi?"+"[TONY]Quer dar uma volta?"+"[VOCÊ]Já passam das seis, não podemos sair daqui"+"[TONY]É só não sermos pegos, qual é cara? desde quando você segue as regras?"+"[Tá legal, vamos]")
+			escreva_devagar("[NARRADOR]A aula acaba e você vai para a sala comunal e encontra Tony lá[TONY]Oi, tava mesmo esperando você!!"+"[VOCÊ]O que foi?"+"[TONY]Quer dar uma volta?"+"[VOCÊ]Já passam das seis, não podemos sair daqui"+"[TONY]É só não sermos pegos, qual é cara? desde quando você segue as regras?"+"[VOCÊ]Tá legal, vamos")
 			pare
 			caso '2':
 			escreva_devagar(nome+" *Todos se assustam e olham para o jogador, que com o grito, acordo*.\n")
@@ -197,7 +197,7 @@ programa
 	}
 	funcao dia_e()
 	{
-		escreva_devagar("[NARRADOR]Vocês chegam em um morrinho, no topo dele tem uma pequena cabana, e você se surpreende por nunca ter visto ela antes [VOCÊ]Como eu nunca vi essa casa antes?[TONY]relaxa aí cabeção, você só está vendo porquê eu quero que veja [NARRADOR]Vocês entram na cabana, e ela é maior por dentro, tipo, muito maior, mesmo depois de tanto tempo no mundo dos bruxos, você ainda não entende como isso é possível [TONY]Legal né?, eu mesmo que encantei, quando meu pai ainda era vivo, ele me ensinou tudo sobre magia, agora só preciso do certificado para transformar esse meu conhecimento em algo legal, já que ele é considerado clandestino [NARRADOR] Tony mistura algumas coisas em um caldeirão, depois disso uma fumaça roxa sobre, e Tony conjura um feitiço que a transforma em um pequeno cristal [TONY] Vamos, meu cliente deve estar esperando [NARRADOR]Você para quando escuta isso [VOCÊ]Qual é Tony, contrabando é ilegal e você sabe bem disso [TONY]óbvio que eu sei, mas diferente de você, não nasci herdeiro, e preciso pagar minhas próprias contas [NARRADOR]O tom de Tony pareceu um pouco magoado, então você resolveu o deixar em paz  [NARRADOR]Quando vocês chegam em uma clareira um homem surge das sombras, com um sorriso perverso ele encara Tony e parece muito animado quando Tony joga o cristal na grama molhada [TONY]Agora me pague como combinamo [NARRADOR] O homem faz uma cara feia e joga o um saco de moedas pra Tony, que da as costas assim que o pega, e te chama para ir embora"+"[NARRADOR]O homem desaparece e você segue Tony, mas antes de voltarem para a trilha, você vê um pergaminho no chão, e se abaixa rapidamente para apanha-lo, colocando rapidamente em seu bolso"+"[NARRADOR]Quando vocês chegam na cabana, Tony se despede e diz que vai passar a noite nela, e você segue para seu quarto ansioso para descobrir o que contém no pergaminho[NARRADOR]Você chega no seu quarto e corre para a escrivaninha [NARRADOR]Ao abrir o pergaminho, a única coisa que você pode observar é um pequena gota de tinta, e quando você passa o dedo, dobre ela, a tormenta começa [NARRADOR]A tinta entra em seu dedo, percorrendo suas veias numa dor agoniante, e junto dessa dor uma voz surge[VOZ]Garoto(a) tolo(a) AHHAAHAUHAUHUAHUHAUAHUAH, muiiito toloooooooo [NARRADOR]Você cai da cadeira e se coloca de joelhos, encostando a cabeça no chão, a fim de diminuir a dor"+"[PASSOS] [PASSOS] [HERNANDEZ]Cara...tá tudo bem? [VOZ]RESPONDA ELE RESPONDA ELE AGORAAAAAAAAAAAAAAA [VOCÊ]tá...eu...eu...sou..agh...sonâmbulo [HERNANDES]Tá certo...boa noite então[VOZ]Vai dormir garoto, amanhã você vai sofrer [VOCÊ] O que você quer comigo, me deixa em paz por favor [VOZ]EU DISSE PRA IR DORMIR, GAROTO(A) INSOLENTE [NARRADOR]A dor fez você desmaiar e acordar no outro dia, sua mão estava latejando [VOZ]Você não passa de um peão agora, eu te controlo, você não tem mais vontades [VOZ]Coloque uma roupa que cubra seus braços, as pessoas podem notar a maldição[NARRADOR] E assim você fez [VOZ] Sua missão é fazer uma poção de cura, e tomar, vou te deixar em paz, mas saiba que eu escuto tudo, e vou tomar o controle quando eu quiser\n")
+		escreva_devagar("[NARRADOR]Vocês chegam em um morrinho, no topo dele tem uma pequena cabana, e você se surpreende por nunca ter visto ela antes [VOCÊ]Como eu nunca vi essa casa antes?[TONY]relaxa aí cabeção, você só está vendo porquê eu quero que veja [NARRADOR]Vocês entram na cabana, e ela é maior por dentro, tipo, muito maior, mesmo depois de tanto tempo no mundo dos bruxos, você ainda não entende como isso é possível [TONY]Legal né?, eu mesmo que encantei, quando meu pai ainda era vivo, ele me ensinou tudo sobre magia, agora só preciso do certificado para transformar esse meu conhecimento em algo legal, já que ele é considerado clandestino [NARRADOR] Tony mistura algumas coisas em um caldeirão, depois disso uma fumaça roxa sobe, e Tony conjura um feitiço que a transforma em um pequeno cristal [TONY] Vamos, meu cliente deve estar esperando [NARRADOR]Você para quando escuta isso [VOCÊ]Qual é Tony, contrabando é ilegal e você sabe bem disso [TONY]Óbvio que eu sei, mas diferente de você, não nasci herdeiro, e preciso pagar minhas próprias contas [NARRADOR]O tom de Tony pareceu um pouco magoado, então você resolveu o deixar em paz  [NARRADOR]Quando vocês chegam em uma clareira um homem surge das sombras, com um sorriso perverso ele encara Tony e parece muito animado quando Tony joga o cristal na grama molhada [TONY]Agora me pague como combinamo [NARRADOR] O homem faz uma cara feia e joga o um saco de moedas pra Tony, que da as costas assim que o pega, e te chama para ir embora"+"[NARRADOR]O homem desaparece e você segue Tony, mas antes de voltarem para a trilha, você vê um pergaminho no chão, e se abaixa rapidamente para apanha-lo, colocando rapidamente em seu bolso"+"[NARRADOR]Quando vocês chegam na cabana, Tony se despede e diz que vai passar a noite nela, e você segue para seu quarto ansioso para descobrir o que contém no pergaminho[NARRADOR]Você chega no seu quarto e corre para a escrivaninha [NARRADOR]Ao abrir o pergaminho, a única coisa que você pode observar é um pequena gota de tinta, e quando você passa o dedo, sobre ela, a tormenta começa [NARRADOR]A tinta entra em seu dedo, percorrendo suas veias numa dor agoniante, e junto dessa dor uma voz surge[VOZ]Garoto(a) tolo(a) AHHAAHAUHAUHUAHUHAUAHUAH, muiiito toloooooooo [NARRADOR]Você cai da cadeira e se coloca de joelhos, encostando a cabeça no chão, a fim de diminuir a dor"+"[PASSOS] [PASSOS] [HERNANDEZ]Cara...tá tudo bem? [VOZ]RESPONDA ELE RESPONDA ELE AGORAAAAAAAAAAAAAAA [VOCÊ]tá...eu...eu...sou..agh...sonâmbulo [HERNANDES]Tá certo...boa noite então[VOZ]Vai dormir garoto, amanhã você vai sofrer [VOCÊ] O que você quer comigo, me deixa em paz por favor [VOZ]EU DISSE PRA IR DORMIR, GAROTO(A) INSOLENTE [NARRADOR]A dor fez você desmaiar e acordar no outro dia, sua mão estava latejando [VOZ]Você não passa de um peão agora, eu te controlo, você não tem mais vontades [VOZ]Coloque uma roupa que cubra seus braços, as pessoas podem notar a maldição[NARRADOR] E assim você fez [VOZ] Sua missão é fazer uma poção de cura, e tomar, vou te deixar em paz, mas saiba que eu escuto tudo, e vou tomar o controle quando eu quiser\n")
 		sanidade -= 5
 		verificacao_vida()
 		se(pocao == 1 )
@@ -253,7 +253,7 @@ programa
                    	{
                       	escreva_devagar("[VOCÊ]Agh, pode ser então")
                   	}
-                   	escreva_devagar("[LIAN] O plano é o seguinte, eu chamo ele para conversar sobre minha nota, e você aproveite que ele vai estar distraído e despeje o flur de estomago no suco de abobora que ele toma toda manhã [NARRADOR]E assim é feito, Lian fala com o professor e você coloca o fluor na bebida dele [NARRADOR]Assim que você termina de despejar você faz um sinal para avisar Lian[NARRADOR]Lian percebe o sinal e encerra a conversa com o professor Sina [NARRADOR]Vocês observam pelo lado de fora, de lá vocês conseguem ver o professor bebiricando o suco [NARRADOR]*já na sala comunal da "+casa+"* [LIAN]Aqui, o sangue de salamandra que você pediu [NARRADOR]Você pega o sangue que precisava e agradece [VOCê]Obrigado/n")
+                   	escreva_devagar("[LIAN] O plano é o seguinte, eu chamo ele para conversar sobre minha nota, e você aproveite que ele vai estar distraído e despeje o flur de estomago no suco de abobora que ele toma toda manhã [NARRADOR]E assim é feito, Lian fala com o professor e você coloca o fluor na bebida dele [NARRADOR]Assim que você termina de despejar você faz um sinal para avisar Lian[NARRADOR]Lian percebe o sinal e encerra a conversa com o professor Sina [NARRADOR]Vocês observam pelo lado de fora, de lá vocês conseguem ver o professor bebiricando o suco [NARRADOR]*já na sala comunal da "+casa+"* [LIAN]Aqui, o sangue de salamandra que você pediu [NARRADOR]Você pega o sangue que precisava e agradece [VOCê]Obrigado")
                	pare
                 	caso contrario:
 				escreva_devagar("A vida é feita de escolhas. Devido você ter escolhido não usar os valores que devia não vamos retornar para que você corrija seus erros assim como na vida você não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo novamente")
@@ -292,13 +292,16 @@ programa
 	     	vida = vida -10
 			sanidade = sanidade -20
 			verificacao_vida()
+			pare
 	          caso '2':
 	     	escreva("[VOCÊ]INCENDIUM!!!!!.[NARRADOR]Você acerta o monstro em cheio e não recebe nenhum dano")
 	     	bigboss = bigboss -30
+	     	pare
 	     	caso contrario:
 			escreva_devagar("A vida é feita de escolhas. Devido você ter escolhido não usar os valores que devia não vamos retornar para que você corrija seus erros assim como na vida você não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo novamente")
 			limpa()
-			fim_de_jogo()	      
+			fim_de_jogo()
+			pare      
 		}
 		se(fim_de_jogov == 0)
 		{
@@ -358,11 +361,11 @@ programa
 						bigboss = 10
 						verifica_vida_boss()
 			         		escreva("******************************\n")
-				          	escreva("* a --> INCENDIUM             \n")
-     					     	escreva("******************************\n")
-    					     	escreva("* b --> REDUPTO               \n")
-			          		escreva("******************************\n")
-     	   		 			leia(opcao[7])
+			          	escreva("* a --> INCENDIUM             \n")
+     			     	escreva("******************************\n")
+    				     	escreva("* b --> REDUPTO               \n")
+			          	escreva("******************************\n")
+     	   		 		leia(opcao[7])
      	     			limpa()
      		     		escolha(opcao[7])
          		 			{
@@ -518,7 +521,7 @@ programa
      }
      funcao escolha_1()
      {
- 	    	escreva("*********************\n")
+     	escreva("*********************\n")
 		escreva("* 1 ---> exmay      *\n")
 		escreva("* 2 ---> exterminion*\n")
 		escreva("*********************\n")

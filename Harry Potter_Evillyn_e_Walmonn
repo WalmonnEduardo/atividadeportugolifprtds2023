@@ -244,7 +244,7 @@ programa
 					pare
                    	}
 				caso '2':
-				escreva_devagar("[VOCÊ]Oi Lian, sabe onde posso conseguir um pouco de sanque de salamandra? [LIAM]Posso te arranjar, mas em troca quero algo de você [VOCÊ]O que extamente? [LIAM]Quero que coloque laxante na bebida do professor Sina\n")
+				escreva_devagar("[VOCÊ]Oi Lian, sabe onde posso conseguir um pouco de sangue de salamandra? [LIAM]Posso te arranjar, mas em troca quero algo de você [VOCÊ]O que extamente? [LIAM]Quero que coloque laxante na bebida do professor Sina\n")
                    	se(carta_expulsao == 1)
                    	{
                     	escreva_devagar("[NARRADOR]A ideia de colocar um laxante na bebida do professor que te expulsou da aula é bem animadora [VOCÊ]Tô dentro!")
@@ -271,11 +271,11 @@ programa
 	{ 
 	    escreva_devagar("[NARRADOR]Você segue o resto do dia normalmente, a voz não volta em nenhum momento, e você até acha que se livrou dela [NARRADOR]Deu a hora de dormir, no jantar você mal tocou na comida, e se sentiu enjoado o tempo todo, além de suas mãos e braços latejando, e suas veias escurecendo [VOZ]Que droga, garoto(a)! Se continuar assim vai morrer antes de terminar a poção de cura, TE PEDI ALGO SIMPLES e em um dia você conseguiu apenas um dos itens da lista, garoto(a) inútil [NARRADOR]A voz ecoa em sua mente, você se deixa levar e desmaia mais uma vez")
 	    dois_dias_depois()
-	    escreva_devagar("[VOCÊ](asma) O que.. o que(asma)... o que aconteceu....(asma) [NARRADOR]Você está confuso, mas segue Tony assim mesmo [NARRADOR]Vocês seguem para a clareira, a mesma que estiveram naquele dia, noites atrás\n")
+	    escreva_devagar("[VOCÊ](asma) O que.. o que(asma)... o que aconteceu....(asma) [TONY]Você precisa vir comigo [NARRADOR]Você está confuso, mas segue Tony assim mesmo [NARRADOR]Vocês seguem para a clareira, a mesma que estiveram naquele dia, noites atrás\n")
 	}
  	 funcao capitulo_final() 
  	 { 
-		escreva_devagar("[NARRADOR]Vocês chegam na clareira, e um sentimento esquisito toma conta de seu peito...Tony, ele está quieto demais e isso não é normal para o Tony [VOCÊ]Tony! chega de silêncio, o que tá acontecendo? o que você tem??? [NARRADOR]Tony para no meio da clareira e observa você de longe, ele abre um sorriso perverso no rosto, que começa a se desfigurar [NARRADOR]Uma gosma verde começa a sair da boca de Tony, e seus olhos se reviram até a parte branca deles [VOCÊ]TONY, QUE MERDA É ESSA CAARA [TONY]Você realmente achou que esse garoto conseguiu te salvar sozinho? Acha mesmo que ele tm esse poder? [NARRADOR]A gosma começa a ter forma de um homem de 2 metros muito forte [VOCÊ]Deixe ele em paz, você já tem a mim !!! [TONY]Você não está entendendo, garoto tolo, a culpa de Tony estar assim é sua, quando você me deixou assumir o comando, seu corpo de verme fraco não aguentou, só precisei derrubar algumas lagrimas para Tony sentir pena, e então ele fez [VOCÊ]fez o que??? [TONY]Ele me transferiu para o próprio corpo, mas ele é bem mais forte que você, então assumi o controle mais rápido [TONY]E ele fez tudo pra que? pra salvar um sangue ruim como você? eu te achava tolo, mas esse Tony se superou [NARRADOR]Assim que o corpo de gosma verde se completa o de Tony caí no chão, você sente medo, talvez seu amigo tenha morrido, tenha morrido por sua causa.*<__BATALHA FINAL INICIADA__>* [VOCÊ]DEIXA ELE EEM PAZ\n")
+		escreva_devagar("[NARRADOR]Vocês chegam na clareira, e um sentimento esquisito toma conta de seu peito...Tony, ele está quieto demais e isso não é normal para o Tony [VOCÊ]Tony! chega de silêncio, o que tá acontecendo? o que você tem??? [NARRADOR]Tony para no meio da clareira e observa você de longe, ele abre um sorriso perverso no rosto, que começa a se desfigurar [NARRADOR]Uma gosma verde começa a sair da boca de Tony, e seus olhos se reviram até a parte branca deles [VOCÊ]TONY, QUE MERDA É ESSA CAARA [TONY]Você realmente achou que esse garoto conseguiu te salvar sozinho? Acha mesmo que ele tm esse poder? [NARRADOR]A gosma começa a ter forma de um homem de 2 metros muito forte [VOCÊ]Deixe ele em paz, você já tem a mim !!! [TONY]Você não está entendendo, garoto tolo, a culpa de Tony estar assim é sua, quando você me deixou assumir o comando, seu corpo de verme fraco não aguentou, só precisei derrubar algumas lagrimas para Tony sentir pena, e então ele fez [VOCÊ]fez o que??? [TONY]Ele me transferiu para o próprio corpo, mas ele é bem mais forte que você, então assumi o controle mais rápido [TONY]E ele fez tudo pra que? pra salvar um sangue ruim como você? eu te achava tolo, mas esse Tony se superou [NARRADOR]Assim que o corpo de gosma verde se completa o de Tony caí no chão, você sente medo, talvez seu amigo tenha morrido, tenha morrido por sua causa.\n*<__BATALHA FINAL INICIADA__>* [VOCÊ]DEIXA ELE EEM PAZ\n")
 		proximo(6000)
 		escreva("**************************\n")
 		escreva("* 1 --> Petrificustotales \n")
@@ -320,8 +320,9 @@ programa
 				vida = vida -45
 				sanidade = sanidade - 30
 				verificacao_vida()	
+				pare
  	   			caso 'b': 
-				escreva_devagar("[NARRADOR]Você desvia consegue desviar com sucesso") 
+				escreva_devagar("[NARRADOR]Você desvia consegue desviar com sucesso\n") 
 				escreva("******************************\n")
 				escreva("<digite (a) para contraatacar>\n")
 				escreva("******************************\n")
@@ -341,7 +342,7 @@ programa
  	   			}
  	   			se(fim_de_jogov == 0)
  	   			{
-   					escreva_devagar("[NARRADOR]Agora, a decisão que pode custar sua vida, qual escolha você vai tomar?")
+   					escreva_devagar("[NARRADOR]Agora, a decisão que pode custar sua vida, qual escolha você vai tomar?\n")
    					escreva("******************************\n")
    					escreva("* 1 --> AVADAQUEDABRA        *\n")
    					escreva("******************************\n")
@@ -391,8 +392,13 @@ programa
 						fim_de_jogo()
     					}
 				}
-			}
+				caso contrario:
+				escreva_devagar("A vida é feita de escolhas. Devido você ter escolhido não usar os valores que devia não vamos retornar para que você corrija seus erros assim como na vida você não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo novamente")
+				limpa()
+				fim_de_jogo()
+			}	
   		}
+  		
  	}
 	funcao pocao_cura()
 	{

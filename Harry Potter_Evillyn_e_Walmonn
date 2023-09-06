@@ -173,9 +173,9 @@ programa
 			escreva_devagar(nome+" *Todos se assustam e olham para o jogador, que com o grito, acordo*.\n")
 			escreva_devagar("Se minha aula é tão entediante assim para dormir, saia, você está espulso da matéria de poções\n\n")
 			proximo(5000)
-			escreva_devagar("               Carta de Espulsão\n"			)
+			escreva_devagar("                     Carta de Espulsão\n"			)
 			escreva_devagar("        Venho informar que por meio deste o aluno\n "	)
-			escreva_devagar("                       "+nome+"\n"								)
+			escreva_devagar("                    "+nome+" "+sobrenome+" \n")
 			escreva_devagar("                está expulso da disciplina\n"			)
 			escreva_devagar("              de poções pois demonstrou tamanha\n"		)
 			escreva_devagar("                     falta de interesse\n"			)
@@ -243,6 +243,7 @@ programa
 					fim_de_jogo()
 					pare
                    	}
+                   	pare
 				caso '2':
 				escreva_devagar("[VOCÊ]Oi Lian, sabe onde posso conseguir um pouco de sangue de salamandra? [LIAM]Posso te arranjar, mas em troca quero algo de você [VOCÊ]O que extamente? [LIAM]Quero que coloque laxante na bebida do professor Sina\n")
                    	se(carta_expulsao == 1)
@@ -305,7 +306,7 @@ programa
 		}
 		se(fim_de_jogov == 0)
 		{
-			escreva_devagar("[NARRADOR]O monstro se prepara para outro ataque, o que você vai fazer?")
+			escreva_devagar("[NARRADOR]O monstro se prepara para outro ataque, o que você vai fazer?\n")
 			escreva("****************************\n")
 			escreva("* a --> se abaixar          \n")
 			escreva("****************************\n")
@@ -356,6 +357,7 @@ programa
 						escreva("[VOCÊ]AVADAQUEDABRA.") 
 						bigboss = -480
 						escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
+						voce_venceu()
 						pare
 						caso '2':
 						escreva("[VOCÊ]SECTONSEMPRA!!!!!!!!\n")
@@ -372,11 +374,12 @@ programa
          		 			{
              					caso 'a':
           					escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
+          					voce_venceu()
           					pare 
              					caso 'b':
              					escreva_devagar("[NARRADOR]Você erra a mira, Tony é possuido, outra vez... [TONY]Garoto(a) tolo(a), sorte sua que eu estou fraco, até mais"+nome+" "+sobrenome+"nos veremos em breveHAYUAHUHAUHAUHUAHUAhuah\n" )
              					escreva_devagar("*seu resultado é incerto, você não perdeu e nem ganhou, mas por enquanto é:  ")
-             					fim_de_jogo()
+             					final_incerto()
              					escreva_devagar("aos comprimentos de Walmonn e Evillyn, muito obrigada por jogar:)")
              					pare
              					caso contrario:
@@ -459,7 +462,7 @@ programa
 					escreva("\n")
 					j = 0 
 				}
-				se(letra_menos == '\\' e letra == 'n')
+				se(letra_menos == '\n')
 				{
 					j = 0
 				}
@@ -488,8 +491,8 @@ programa
 		{  	
 			proximo(6000)
 			escreva_devagar("você morreu\n")
-			fim_de_jogo()
 			escreva_devagar("aos comprimentos de Walmonn e Evillyn, muito obrigada por jogar:)")
+			fim_de_jogo()
 		}
 		se(sanidade <= 10)
 		{
@@ -525,31 +528,6 @@ programa
 			escreva_devagar(" [NARRADOR]O monstro começa a virar a gosma verde outra vez, e agora ele está indo em dirção de Tony")
           }
      }
-     funcao escolha_1()
-     {
-     	escreva("*********************\n")
-		escreva("* 1 ---> exmay      *\n")
-		escreva("* 2 ---> exterminion*\n")
-		escreva("*********************\n")
-		leia(opcao[8])
-		limpa()
-		escolha(opcao[8])
-		{
-			caso '1':
-			escreva_devagar("[NITA]EXMAY![VOCÊ]EXMAY!![VOZ]COMO OUSA ME DESOBEDECER?? [NARRADOR]Uma dor toma sua cabeça, você fica palído e luta pra ficar em pé [NITA]Tá tudo bem? [VOCÊ]Não tomei café hoje, devo estar pouco tonto(a) [NITA]Certo...aqui, já consegui sangue o suficiente, vamos ir embora, você não parece bem\n")
-			sanidade -= 20
-			verificacao_vida()
-			escreva_devagar(" [NITA]Aqui, sua parte [VOCÊ]o..obriga..da obrigada [NITA]Por nada "+nome+" vê se passa lá na enfermaria, sua cara está horrível hahahahahah\n") 
-			pare
-			caso '2':
-			escreva_devagar(" [VOCÊ]EXTERMINION!! [NITA]QUAL È O SE PROBLMA HOJE?, não precisava ter machucado eles [VOCÊ]d..desculpa, não sei o que deu em mim [NITA]Espera lá fora, não quero que machuque mais nenhum deles! [VOCÊ]Foi mal nita[NARRADOR]Nita sai da caverna irritada, no caminho pra casa vocês não trocam nenhuma palavra, quando chegam no castelo ela te da um frasco com o sangue e vai embora sem dizer uma palavra\n")
-			pare
-			caso contrario:
-			escreva_devagar("A vida é feita de escolhas. Devido você ter escolhido não usar os valores que devia não vamos retornar para que você corrija seus erros assim como na vida você não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo novamente")
-			limpa()
-			fim_de_jogo()
-		}
-	}
 	funcao dois_dias_depois()
 	{
 		escreva("DDDDDDDDDDDDD                           iiii                         \n") 

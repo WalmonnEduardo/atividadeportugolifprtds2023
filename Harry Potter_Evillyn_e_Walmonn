@@ -248,11 +248,11 @@ programa
 				escreva_devagar("[VOCÊ]Oi Lian, sabe onde posso conseguir um pouco de sangue de salamandra? [LIAM]Posso te arranjar, mas em troca quero algo de você [VOCÊ]O que extamente? [LIAM]Quero que coloque laxante na bebida do professor Sina\n")
                    	se(carta_expulsao == 1)
                    	{
-                    	escreva_devagar("[NARRADOR]A ideia de colocar um laxante na bebida do professor que te expulsou da aula é bem animadora [VOCÊ]Tô dentro!")
+                    	escreva_devagar("[NARRADOR]A ideia de colocar um laxante na bebida do professor que te expulsou da aula é bem animadora [VOCÊ]Tô dentro!\n")
                    	}
                     senao
                    	{
-                      	escreva_devagar("[VOCÊ]Agh, pode ser então")
+                      	escreva_devagar("[VOCÊ]Agh, pode ser então\n")
                   	}
                    	escreva_devagar("[LIAN] O plano é o seguinte, eu chamo ele para conversar sobre minha nota, e você aproveite que ele vai estar distraído e despeje o flur de estomago no suco de abobora que ele toma toda manhã [NARRADOR]E assim é feito, Lian fala com o professor e você coloca o fluor na bebida dele [NARRADOR]Assim que você termina de despejar você faz um sinal para avisar Lian[NARRADOR]Lian percebe o sinal e encerra a conversa com o professor Sina [NARRADOR]Vocês observam pelo lado de fora, de lá vocês conseguem ver o professor bebiricando o suco [NARRADOR]*já na sala comunal da "+casa+"* [LIAN]Aqui, o sangue de salamandra que você pediu [NARRADOR]Você pega o sangue que precisava e agradece [VOCê]Obrigado")
                	pare
@@ -276,8 +276,8 @@ programa
 	}
  	 funcao capitulo_final() 
  	 { 
-		escreva_devagar("[NARRADOR]Vocês chegam na clareira, e um sentimento esquisito toma conta de seu peito...Tony, ele está quieto demais e isso não é normal para o Tony [VOCÊ]Tony! chega de silêncio, o que tá acontecendo? o que você tem??? [NARRADOR]Tony para no meio da clareira e observa você de longe, ele abre um sorriso perverso no rosto, que começa a se desfigurar [NARRADOR]Uma gosma verde começa a sair da boca de Tony, e seus olhos se reviram até a parte branca deles [VOCÊ]TONY, QUE MERDA É ESSA CAARA [TONY]Você realmente achou que esse garoto conseguiu te salvar sozinho? Acha mesmo que ele tm esse poder? [NARRADOR]A gosma começa a ter forma de um homem de 2 metros muito forte [VOCÊ]Deixe ele em paz, você já tem a mim !!! [TONY]Você não está entendendo, garoto tolo, a culpa de Tony estar assim é sua, quando você me deixou assumir o comando, seu corpo de verme fraco não aguentou, só precisei derrubar algumas lagrimas para Tony sentir pena, e então ele fez [VOCÊ]fez o que??? [TONY]Ele me transferiu para o próprio corpo, mas ele é bem mais forte que você, então assumi o controle mais rápido [TONY]E ele fez tudo pra que? pra salvar um sangue ruim como você? eu te achava tolo, mas esse Tony se superou [NARRADOR]Assim que o corpo de gosma verde se completa o de Tony caí no chão, você sente medo, talvez seu amigo tenha morrido, tenha morrido por sua causa.\n*<__BATALHA FINAL INICIADA__>* [VOCÊ]DEIXA ELE EEM PAZ\n")
 		proximo(6000)
+		escreva_devagar("[NARRADOR]Vocês chegam na clareira, e um sentimento esquisito toma conta de seu peito...Tony, ele está quieto demais e isso não é normal para o Tony [VOCÊ]Tony! chega de silêncio, o que tá acontecendo? o que você tem??? [NARRADOR]Tony para no meio da clareira e observa você de longe, ele abre um sorriso perverso no rosto, que começa a se desfigurar [NARRADOR]Uma gosma verde começa a sair da boca de Tony, e seus olhos se reviram até a parte branca deles [VOCÊ]TONY, QUE MERDA É ESSA CAARA [TONY]Você realmente achou que esse garoto conseguiu te salvar sozinho? Acha mesmo que ele tm esse poder? [NARRADOR]A gosma começa a ter forma de um homem de 2 metros muito forte [VOCÊ]Deixe ele em paz, você já tem a mim !!! [TONY]Você não está entendendo, garoto tolo, a culpa de Tony estar assim é sua, quando você me deixou assumir o comando, seu corpo de verme fraco não aguentou, só precisei derrubar algumas lagrimas para Tony sentir pena, e então ele fez [VOCÊ]fez o que??? [TONY]Ele me transferiu para o próprio corpo, mas ele é bem mais forte que você, então assumi o controle mais rápido [TONY]E ele fez tudo pra que? pra salvar um sangue ruim como você? eu te achava tolo, mas esse Tony se superou [NARRADOR]Assim que o corpo de gosma verde se completa o de Tony caí no chão, você sente medo, talvez seu amigo tenha morrido, tenha morrido por sua causa.\n*<__BATALHA FINAL INICIADA__>* [VOCÊ]DEIXA ELE EEM PAZ\n")
 		escreva("**************************\n")
 		escreva("* 1 --> Petrificustotales \n")
 		escreva("**************************\n")
@@ -332,7 +332,7 @@ programa
 				escolha(opcao[5])
 				{ 
 					caso 'a': 
-					escreva_devagar("*bigboss -100")
+					escreva_devagar("*bigboss -100\n")
 					verifica_vida_boss()
 					pare
 					caso contrario:
@@ -354,7 +354,7 @@ programa
    	 				escolha(opcao[6])
    	 				{
 						caso '1':
-						escreva("[VOCÊ]AVADAQUEDABRA.") 
+						escreva("[VOCÊ]AVADAQUEDABRA.\n") 
 						bigboss = -480
 						escreva_devagar("[NARRADOR]O monstro foi derrotado, assim que sua corpo gosma cai no chão, e mostra sinal de derrota, Tony tosse algo preto, que se transforma em uma nuvem de fumaça, e voa para o céu [TONY]O quê aconteceu meu amigo? [VOCê]Longa historia tony,longa Historia...........")
 						voce_venceu()
@@ -393,8 +393,10 @@ programa
 						escreva_devagar("A vida é feita de escolhas. Devido você ter escolhido não usar os valores que devia não vamos retornar para que você corrija seus erros assim como na vida você não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo novamente")
 						limpa()
 						fim_de_jogo()
+						pare
     					}
 				}
+				pare
 				caso contrario:
 				escreva_devagar("A vida é feita de escolhas. Devido você ter escolhido não usar os valores que devia não vamos retornar para que você corrija seus erros assim como na vida você não pode voltar no tempo e mudar sua escolha agora só na proxima reencarnação que acontecerá quando você inciar o jogo novamente")
 				limpa()
@@ -448,7 +450,7 @@ programa
 	funcao escreva_devagar(cadeia texto)
 	{						
 		caracter letra
-		inteiro velocidade = 50
+		inteiro velocidade = 100
 		inteiro j = 0
 		
 		para(inteiro i = 0 ; i < tx.numero_caracteres(texto) ; i++)
@@ -525,11 +527,12 @@ programa
      {
 		se(bigboss <= 10)
 		{ 
-			escreva_devagar(" [NARRADOR]O monstro começa a virar a gosma verde outra vez, e agora ele está indo em dirção de Tony")
+			escreva_devagar(" [NARRADOR]O monstro começa a virar a gosma verde outra vez, e agora ele está indo em dirção de Tony\n")
           }
      }
 	funcao dois_dias_depois()
 	{
+		proximo(4000)
 		escreva("DDDDDDDDDDDDD                           iiii                         \n") 
 		escreva("D::::::::::::DDD                       i::::i                       \n") 
 		escreva("D:::::::::::::::DD                      iiii                        \n") 
@@ -586,10 +589,11 @@ programa
 		escreva("                                         p:::::::p\n")
 		escreva("                                         p:::::::p\n")
 		escreva("                                         ppppppppp\n")
-
+		proximo(4000)	
 	}
 	funcao fim_de_jogo()
 	{
+		proximo(4000)
 	 	escreva("FFFFFFFFFFFFFFFFFFFFFF  iiii\n")
 		escreva("F::::::::::::::::::::F i::::i\n")
 		escreva("F::::::::::::::::::::F  iiii\n")
@@ -648,10 +652,12 @@ programa
 		escreva("                                      gg:::::::::::::g\n")
 		escreva("                                        ggg::::::ggg\n")
 		escreva("                                           gggggg\n")
-		fim_de_jogov ++   	
+		fim_de_jogov ++ 
+		proximo(4000)  	
 	} 
 	funcao final_incerto()
 	{
+		proximo(4000)
 		escreva("FFFFFFFFFFFFFFFFFFFFFF  iiii                                     lllllll\n")
 		escreva("F::::::::::::::::::::F i::::i                                    l:::::l\n")
 		escreva("F::::::::::::::::::::F  iiii                                     l:::::l\n")
@@ -685,9 +691,12 @@ programa
 		escreva("I::::::::In::::n    n::::n c:::::::::::::::::c e::::::::eeeeeeee   r:::::r                  tt::::::::::::::to:::::::::::::::o\n")
 		escreva("I::::::::In::::n    n::::n  cc:::::::::::::::c  ee:::::::::::::e   r:::::r                    tt:::::::::::tt oo:::::::::::oo \n")
 		escreva("IIIIIIIIIInnnnnn    nnnnnn    cccccccccccccccc    eeeeeeeeeeeeee   rrrrrrr                      ttttttttttt     ooooooooooo")
+		fim_de_jogov ++   	
+		proximo(4000)
 	}
 	funcao voce_venceu()
 	{
+		proximo(4000)
 		escreva("VVVVVVVV           VVVVVVVV                                            ^^          \n")
 		escreva("V::::::V           V::::::V                                          ^^ ^^         \n")
 		escreva("V::::::V           V::::::V                                         ^^   ^^             \n")
@@ -721,5 +730,7 @@ programa
 		escreva("          V:::::V       e::::::::eeeeeeee    n::::n    n::::n c:::::::::::::::::c e::::::::eeeeeeee   u:::::::::::::::u\n")
 		escreva("           V:::V         ee:::::::::::::e    n::::n    n::::n  cc:::::::::::::::c  ee:::::::::::::e    uu::::::::uu:::u\n")
 		escreva("            VVV            eeeeeeeeeeeeee    nnnnnn    nnnnnn    cccccccccccccccc    eeeeeeeeeeeeee      uuuuuuuu  uuuu\n")
+		fim_de_jogov ++   	
+		proximo(4000)
 	}
 }

@@ -8,15 +8,29 @@ programa
 	cadeia original = " "
 	caracter letra = ' '
 	inteiro cripto = 0
+	cadeia chavel
 	funcao inicio()
 	{
 		escreva("Escreva um texto para ser descriptografado:")
 		leia(original)
 		original += "."
-		escreva("Qual a chave?")
-		leia(chave)
+		escreva("Qual a chave?Caso não souber digite 'n'")
+		leia(chavel)
 		limpa()
-		contagem_letras()
+		se(chavel == "n")
+		{
+			para(chave = 0; chave < 26; chave++)
+			{
+				contagem_letras()
+				escreva("\n")
+				numero_letra = 0
+			}
+		}
+		senao
+		{
+			chave =  Tipos.cadeia_para_inteiro(chavel, 0)
+		}
+		
 	}
 	funcao contagem_letras()
 	{
@@ -65,13 +79,12 @@ programa
 			caso 'x' : cripto = 23 - chave pare
 			caso 'y' : cripto = 24 - chave pare
 			caso 'z' : cripto = 25 - chave pare
-			caso ' ' : cripto = 1874919424 pare
 			caso contrario: cripto = 1234567890 pare
 		}
 	}
 	funcao criptografado()
 	{
-		se(cripto != 1874919424 ou cripto != 1234567890 )
+		se(cripto != 1234567890 )
 		{
 			se(cripto < 0)
 			{
